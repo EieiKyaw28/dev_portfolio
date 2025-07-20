@@ -1,0 +1,150 @@
+import 'dart:developer';
+
+import 'package:flutter/material.dart';
+import 'package:portfolio/res/constants.dart';
+import 'package:portfolio/view%20model/controller.dart';
+import 'package:portfolio/view/main/components/navigation_bar.dart';
+
+import '../../view model/responsive.dart';
+import 'components/navigation_button_list.dart';
+import 'package:flutter/foundation.dart' show kIsWeb;
+
+class MainView extends StatefulWidget {
+  const MainView({super.key, required this.pages});
+  final List<Widget> pages;
+
+  @override
+  State<MainView> createState() => _MainViewState();
+}
+
+class _MainViewState extends State<MainView> {
+  ScrollController scrollController = ScrollController();
+  int currentIndex = 0;
+
+  // Assume each section is 300 pixels tall
+  late List<GlobalKey> sectionKeys;
+
+  @override
+  void initState() {
+    super.initState();
+
+    sectionKeys = List.generate(widget.pages.length, (index) => GlobalKey());
+
+    scrollController.addListener(() {
+      _updateCurrentIndex();
+    });
+  }
+
+  void _updateCurrentIndex() {
+    for (int i = 0; i < sectionKeys.length; i++) {
+      final key = sectionKeys[i];
+      final context = key.currentContext;
+
+      if (context != null) {
+        final box = context.findRenderObject() as RenderBox;
+        final position = box.localToGlobal(Offset.zero);
+        final height = box.size.height;
+        final screenHeight = MediaQuery.of(context).size.height;
+
+        final top = position.dy;
+        final bottom = top + height;
+
+        if (top < screenHeight / 2 && bottom > screenHeight / 2) {
+          if (currentIndex != i) {
+            setState(() {
+              currentIndex = i;
+            });
+          }
+          break;
+        }
+      }
+    }
+  }
+
+  void scrollToIndex(int index) {
+    log("Scroll Index : ${index}");
+    final context = sectionKeys[index].currentContext;
+    if (context != null) {
+      Scrollable.ensureVisible(
+        context,
+        duration: const Duration(milliseconds: 500),
+        curve: Curves.easeInOut,
+      );
+    }
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      bottomNavigationBar:  Row(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          Padding(
+            padding: const EdgeInsets.all(20),
+            child: Text(
+              "Developed in Flutter with ❤️",
+              style: TextStyle(fontSize: 20, color: Colors.white),
+            ),
+          ),
+        ],
+      ),
+
+      body: Center(
+        child: Column(
+          children: [
+            // kIsWeb && !Responsive.isLargeMobile(context)
+            //     ? const SizedBox(height: defaultPadding * 3)
+            //     : const SizedBox(height: 1),
+            // Row(
+            //   children: [
+            //     Icon(Icons.person),
+            //     SizedBox(
+            //       height: 80,
+            //       child: NavigationButtonList(
+            //         selectedText: selectedText,
+            //         onTap: onTap,
+            //       ),
+            //     ),
+            //   ],
+            // ),
+            //if (Responsive.isLargeMobile(context))
+            SizedBox(height: 50),
+
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Icon(Icons.person),
+                NavigationButtonList(
+                  onTap: (index) {
+                    scrollToIndex(index);
+                  },
+                  selectedText:
+                      currentIndex == 0
+                          ? 'Home'
+                          : currentIndex == 1
+                          ? "About"
+                          : currentIndex == 2
+                          ? "Project Experiences"
+                          : "Skills",
+                ),
+              ],
+            ),
+            Expanded(
+              child: ListView.builder(
+                shrinkWrap: true,
+                controller: scrollController,
+                itemCount: widget.pages.length,
+                itemBuilder: (context, index) {
+                  return Container(
+                    key: sectionKeys[index],
+                    child: widget.pages[index],
+                  );
+                },
+              ),
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+}
