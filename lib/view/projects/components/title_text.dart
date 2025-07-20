@@ -24,7 +24,7 @@ class TitleText extends StatelessWidget {
                     ? Responsive.isLargeMobile(context)
                         ? 20
                         : 30
-                    : 50,
+                    : 28,
             fontWeight: FontWeight.bold,
           ),
         ),
@@ -46,7 +46,7 @@ class TitleText extends StatelessWidget {
                           ? Responsive.isLargeMobile(context)
                               ? 20
                               : 30
-                          : 50,
+                          : 28,
                   fontWeight: FontWeight.bold,
                 ),
               ),

@@ -10,26 +10,24 @@ class DownloadButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return InkWell(
       onTap: () {
-        launchUrl(Uri.parse('https://drive.google.com/drive/quota'));
+        launchUrl(Uri.parse('https://drive.google.com/drive/my-drive'));
       },
       child: Container(
+        width: 200,
+        decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(5),
+          color: bgColor,
+          boxShadow: const [
+            BoxShadow(color: g1Color, offset: Offset(0, -1), blurRadius: 5),
+            BoxShadow(color: g2Color, offset: Offset(0, 1), blurRadius: 5),
+          ],
+        ),
         alignment: Alignment.center,
         padding: const EdgeInsets.symmetric(
           vertical: defaultPadding / 1.5,
           horizontal: defaultPadding * 2,
         ),
-        decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(20),
-          boxShadow: const [
-            BoxShadow(color: g1Color, offset: Offset(0, -1), blurRadius: 5),
-            BoxShadow(color: g2Color, offset: Offset(0, 1), blurRadius: 5),
-          ],
-          gradient: LinearGradient(
-            begin: Alignment.topLeft,
-            end: Alignment.bottomRight,
-            colors: [g1Color, g2Color],
-          ),
-        ),
+
         child: Row(
           children: [
             Text(
