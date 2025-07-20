@@ -81,7 +81,7 @@ class About extends StatelessWidget {
               ),
             ),
 
-            SizedBox(height: 20),
+            SizedBox(height: 5),
 
             Row(
               //mainAxisAlignment: MainAxisAlignment.spaceBetween,

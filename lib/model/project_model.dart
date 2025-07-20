@@ -40,7 +40,7 @@ class ProjectModel {
     /// my project
     ProjectModel(
       title: "Expense Tracker",
-      description: "Developed with Isar Databaswe, GetX",
+      description: "Developed with Isar Database and GetX",
       appPhotos: "assets/proj_images/expense.png",
       techUsed: ["isar", "getx"],
 
@@ -52,7 +52,7 @@ class ProjectModel {
     ),
     ProjectModel(
       title: "Shop Now",
-      description: "Developed with Supabase, PostgreSQL,  Isar and Riverpod",
+      description: "Developed with Supabase, PostgreSQL, Isar and Riverpod",
       appPhotos: "assets/proj_images/flutter.png",
       techUsed: ["supabase", "isar", "riverpod"],
 
@@ -62,7 +62,7 @@ class ProjectModel {
       macosLink: null,
       gitLink: 'https://github.com/EieiKyaw28/shop_now_backend',
     ),
-   
+
     ProjectModel(
       title: "POS(Lite)",
       description:

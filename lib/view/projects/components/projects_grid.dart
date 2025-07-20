@@ -9,7 +9,13 @@ import '../../../view model/getx_controllers/projects_controller.dart';
 class ProjectGrid extends StatelessWidget {
   final int crossAxisCount;
   final double ratio;
-  ProjectGrid({super.key, this.crossAxisCount = 3, this.ratio = 1.3});
+  final int? projectLength;
+  ProjectGrid({
+    super.key,
+    this.crossAxisCount = 3,
+    this.ratio = 1.3,
+    this.projectLength,
+  });
   final controller = Get.put(ProjectController());
   @override
   Widget build(BuildContext context) {
@@ -17,7 +23,7 @@ class ProjectGrid extends StatelessWidget {
     return GridView.builder(
       shrinkWrap: true,
       padding: const EdgeInsets.symmetric(horizontal: 10),
-      itemCount: ProjectModel.projects.length,
+      itemCount: projectLength ?? ProjectModel.projects.length,
       gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
         crossAxisSpacing: 1,
         crossAxisCount: crossAxisCount,

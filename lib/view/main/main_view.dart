@@ -1,13 +1,8 @@
 import 'dart:developer';
 
 import 'package:flutter/material.dart';
-import 'package:portfolio/res/constants.dart';
-import 'package:portfolio/view%20model/controller.dart';
-import 'package:portfolio/view/main/components/navigation_bar.dart';
 
-import '../../view model/responsive.dart';
 import 'components/navigation_button_list.dart';
-import 'package:flutter/foundation.dart' show kIsWeb;
 
 class MainView extends StatefulWidget {
   const MainView({super.key, required this.pages});
@@ -76,18 +71,21 @@ class _MainViewState extends State<MainView> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      bottomNavigationBar:  Row(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          Padding(
-            padding: const EdgeInsets.all(20),
-            child: Text(
-              "Developed in Flutter with ❤️",
-              style: TextStyle(fontSize: 20, color: Colors.white),
-            ),
-          ),
-        ],
-      ),
+      bottomNavigationBar:
+          currentIndex == 3
+              ? Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Padding(
+                    padding: const EdgeInsets.all(20),
+                    child: Text(
+                      "Developed in Flutter with ❤️",
+                      style: TextStyle(fontSize: 16, color: Colors.white),
+                    ),
+                  ),
+                ],
+              )
+              : null,
 
       body: Center(
         child: Column(
@@ -113,9 +111,13 @@ class _MainViewState extends State<MainView> {
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                Icon(Icons.person),
+                SizedBox(),
+                //Icon(Icons.person),
                 NavigationButtonList(
                   onTap: (index) {
+                    setState(() {
+                      currentIndex = index;
+                    });
                     scrollToIndex(index);
                   },
                   selectedText:
@@ -130,16 +132,16 @@ class _MainViewState extends State<MainView> {
               ],
             ),
             Expanded(
-              child: ListView.builder(
-                shrinkWrap: true,
+              child: SingleChildScrollView(
                 controller: scrollController,
-                itemCount: widget.pages.length,
-                itemBuilder: (context, index) {
-                  return Container(
-                    key: sectionKeys[index],
-                    child: widget.pages[index],
-                  );
-                },
+                child: Column(
+                  children: List.generate(widget.pages.length, (index) {
+                    return Container(
+                      key: sectionKeys[index],
+                      child: widget.pages[index],
+                    );
+                  }),
+                ),
               ),
             ),
           ],
