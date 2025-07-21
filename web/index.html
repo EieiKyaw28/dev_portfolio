@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+
 <head>
   <!--
     If you are serving your web app in a path other than the root, change the
@@ -27,12 +28,173 @@
   <link rel="apple-touch-icon" href="icons/Icon-192.png">
 
   <!-- Favicon -->
-  <link rel="icon" type="image/png" href="favicon.png"/>
+  <link rel="icon" type="image/png" href="favicon.png" />
 
   <title>dev_portfolio</title>
   <link rel="manifest" href="manifest.json">
+
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background-color: #210F37;
+      /* bgColor */
+      color: #210F37;
+      font-family: Arial, sans-serif;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      flex-direction: column;
+    }
+
+
+
+    .loading {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      text-align: center;
+    }
+
+    .typing {
+      width: 260px;
+      /* Temporarily disable animation */
+      border-right: 2px solid #E5AAC3;
+      /* font-size: 20px;
+      margin-bottom: 30px;
+      white-space: nowrap;
+      overflow: hidden;
+      border-right: 2px solid #E5AAC3;
+      width: 0;
+      animation: typing 2s steps(30, end) forwards, blink 0.7s step-end infinite; */
+    }
+
+    @keyframes typing {
+      from {
+        width: 0;
+      }
+
+      to {
+        width: 260px;
+      }
+    }
+
+    @keyframes blink {
+      50% {
+        border-color: transparent;
+      }
+    }
+
+    .quote {
+      font-size: 16px;
+      max-width: 100%;
+      color: #E5AAC3;
+      text-shadow: 0 0 8px #E5AAC3;
+      animation: pulse 3s ease-in-out infinite;
+    }
+
+    @keyframes pulse {
+
+      0%,
+      100% {
+        opacity: 1;
+        text-shadow: 0 0 8px #98DED9;
+      }
+
+      50% {
+        opacity: 0.6;
+        text-shadow: 0 0 4px #98DED9;
+      }
+    }
+  </style>
 </head>
+
 <body>
-  <script src="flutter_bootstrap.js" async></script>
+
+  <div class="loading">
+    <!-- /  <div class="typing">Welcome to my portfolio</div> -->
+    <div class="quote">“Welcome to my portfolio”</div>
+  </div>
+
+  <script type="text/javascript" defer>
+    (function (e, t) {
+      var n = e.amplitude || { _q: [], _iq: {} };
+      var r = t.createElement("script");
+      r.type = "text/javascript";
+      r.integrity = "sha384-UcvEbHmT0LE2ZB30Y3FmY3Nfw6puAKXz/LpCFuoywywYikMOr/519Uu1yNq2nL9w";
+      r.crossOrigin = "anonymous";
+      r.async = true;
+      r.src = "https://cdn.amplitude.com/libs/amplitude-8.12.0-min.gz.js";
+      r.onload = function () {
+        if (!e.amplitude.runQueuedFunctions) {
+          console.log("[Amplitude] Error: could not load SDK")
+        }
+      };
+      var s = t.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(r, s);
+
+      function i(e, t) {
+        e.prototype[t] = function () {
+          this._q.push([t].concat(Array.prototype.slice.call(arguments, 0)));
+          return this
+        }
+      }
+      var o = function () {
+        this._q = [];
+        return this
+      };
+      var a = ["add", "append", "clearAll", "prepend", "set", "setOnce", "unset", "preInsert", "postInsert", "remove"];
+      for (var c = 0; c < a.length; c++) {
+        i(o, a[c])
+      }
+      n.Identify = o;
+      var u = function () {
+        this._q = [];
+        return this
+      };
+      var l = ["setProductId", "setQuantity", "setPrice", "setRevenueType", "setEventProperties"];
+      for (var p = 0; p < l.length; p++) {
+        i(u, l[p])
+      }
+      n.Revenue = u;
+      var d = ["init", "logEvent", "logRevenue", "setUserId", "setUserProperties", "setOptOut", "setVersionName", "setDomain", "setDeviceId", "enableTracking", "setGlobalUserProperties", "identify", "clearUserProperties", "setGroup", "logRevenueV2", "regenerateDeviceId", "groupIdentify", "onInit", "logEventWithTimestamp", "logEventWithGroups", "setSessionId", "resetSessionId", "getDeviceId", "getUserId", "setMinTimeBetweenSessionsMillis", "setEventUploadThreshold", "setUseDynamicConfig", "setServerZone", "setServerUrl", "sendEvents", "setLibrary", "setTransport"];
+
+      function v(e) {
+        function t(t) {
+          e[t] = function () {
+            e._q.push([t].concat(Array.prototype.slice.call(arguments, 0)))
+          }
+        }
+        for (var n = 0; n < d.length; n++) {
+          t(d[n])
+        }
+      }
+      v(n);
+      n.getInstance = function (e) {
+        e = (!e || e.length === 0 ? "$default_instance" : e).toLowerCase();
+        if (!Object.prototype.hasOwnProperty.call(n._iq, e)) {
+          n._iq[e] = { _q: [] };
+          v(n._iq[e])
+        }
+        return n._iq[e]
+      };
+      e.amplitude = n
+    })(window, document);
+  </script>
+
+  <script src="main.dart.js" type="application/javascript"></script>
+
+
+
+
+
+
 </body>
+
 </html>
