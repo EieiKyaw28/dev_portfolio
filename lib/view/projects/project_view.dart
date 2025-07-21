@@ -107,7 +107,7 @@ class ProjectsView extends StatelessWidget {
         const SizedBox(height: 5),
         Responsive(
           desktop: ProjectGrid(crossAxisCount: 2, projectLength: 4),
-          extraLargeScreen: ProjectGrid(crossAxisCount: 4, projectLength: 4),
+          extraLargeScreen: ProjectGrid(crossAxisCount: 2, projectLength: 4),
           largeMobile: ProjectGrid(
             crossAxisCount: 1,
             ratio: 1.8,
