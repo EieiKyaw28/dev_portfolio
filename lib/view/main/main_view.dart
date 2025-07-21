@@ -1,6 +1,8 @@
 import 'dart:developer';
 
 import 'package:flutter/material.dart';
+import 'package:portfolio/res/constants.dart';
+import 'package:portfolio/view/projects/components/title_text.dart';
 
 import 'components/navigation_button_list.dart';
 
@@ -90,46 +92,42 @@ class _MainViewState extends State<MainView> {
       body: Center(
         child: Column(
           children: [
-            // kIsWeb && !Responsive.isLargeMobile(context)
-            //     ? const SizedBox(height: defaultPadding * 3)
-            //     : const SizedBox(height: 1),
-            // Row(
-            //   children: [
-            //     Icon(Icons.person),
-            //     SizedBox(
-            //       height: 80,
-            //       child: NavigationButtonList(
-            //         selectedText: selectedText,
-            //         onTap: onTap,
-            //       ),
-            //     ),
-            //   ],
-            // ),
-            //if (Responsive.isLargeMobile(context))
-            SizedBox(height: 50),
+            SizedBox(height: 30),
 
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                SizedBox(),
-                //Icon(Icons.person),
-                NavigationButtonList(
-                  onTap: (index) {
-                    setState(() {
-                      currentIndex = index;
-                    });
-                    scrollToIndex(index);
-                  },
-                  selectedText:
-                      currentIndex == 0
-                          ? 'Home'
-                          : currentIndex == 1
-                          ? "About"
-                          : currentIndex == 2
-                          ? "Project Experiences"
-                          : "Skills",
-                ),
-              ],
+            Padding(
+              padding: const EdgeInsets.all(10),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  ShaderMask(
+                    shaderCallback: (bounds) {
+                      return LinearGradient(
+                        colors: [g1Color, g2Color],
+                      ).createShader(bounds);
+                    },
+                    child: TitleText(
+                      prefix: '',
+                      title: 'Welcom to my portfolio',
+                    ),
+                  ),
+                  NavigationButtonList(
+                    onTap: (index) {
+                      setState(() {
+                        currentIndex = index;
+                      });
+                      scrollToIndex(index);
+                    },
+                    selectedText:
+                        currentIndex == 0
+                            ? 'Home'
+                            : currentIndex == 1
+                            ? "About"
+                            : currentIndex == 2
+                            ? "Project Experiences"
+                            : "Skills",
+                  ),
+                ],
+              ),
             ),
             Expanded(
               child: SingleChildScrollView(

@@ -22,7 +22,22 @@ class NavigationTextButton extends StatelessWidget {
         padding: const EdgeInsets.all(4),
         child: Container(
           decoration: BoxDecoration(
-            color: isSelected ? g1Color.withOpacity(.2) : Colors.transparent,
+            boxShadow:
+                isSelected
+                    ? const [
+                      BoxShadow(
+                        color: g1Color,
+                        offset: Offset(0, -1),
+                        blurRadius: 2,
+                      ),
+                      BoxShadow(
+                        color: g2Color,
+                        offset: Offset(0, 1),
+                        blurRadius: 2,
+                      ),
+                    ]
+                    : null,
+            color: bgColor,
             borderRadius: BorderRadius.circular(10),
           ),
 

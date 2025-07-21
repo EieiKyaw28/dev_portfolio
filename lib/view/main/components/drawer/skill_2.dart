@@ -222,12 +222,15 @@ class _Skill2State extends State<Skill2> with SingleTickerProviderStateMixin {
             children: [
               Positioned(
                 child: Center(
-                  child: Text(
-                    'My Expertise in Flutter and Mobile Development',
-                    style: TextStyle(
-                      color: Colors.white,
-                      fontSize: 28,
-                      fontWeight: FontWeight.bold,
+                  child: ShaderMask(
+                    shaderCallback: (bounds) {
+                      return LinearGradient(
+                        colors: [g1Color, g2Color],
+                      ).createShader(bounds);
+                    },
+                    child: TitleText(
+                      prefix: '',
+                      title: 'My Expertise in Flutter and Mobile Development',
                     ),
                   ),
                 ),
@@ -303,13 +306,9 @@ class _Skill2State extends State<Skill2> with SingleTickerProviderStateMixin {
                     colors: [g1Color, g2Color],
                   ).createShader(bounds);
                 },
-                child: Text(
-                  'My Expertise in Flutter and Mobile Development',
-                  style: TextStyle(
-                    color: Colors.white,
-                    fontSize: 20,
-                    fontWeight: FontWeight.bold,
-                  ),
+                child: TitleText(
+                  prefix: '',
+                  title: 'My Expertise in Flutter and Mobile Development',
                 ),
               ),
 
@@ -417,8 +416,20 @@ class _Skill2State extends State<Skill2> with SingleTickerProviderStateMixin {
               SizedBox(height: 4),
               Container(
                 decoration: BoxDecoration(
-                  color: color.withOpacity(.2),
+                  color: bgColor, //color.withOpacity(.2)
                   borderRadius: BorderRadius.circular(10),
+                  boxShadow: const [
+                    BoxShadow(
+                      color: g1Color,
+                      offset: Offset(0, -1),
+                      blurRadius: 5,
+                    ),
+                    BoxShadow(
+                      color: g2Color,
+                      offset: Offset(0, 1),
+                      blurRadius: 5,
+                    ),
+                  ],
                 ),
                 width: 240,
                 height: 200,
