@@ -153,7 +153,7 @@ class ProjectsView extends StatelessWidget {
                       Expanded(
                         child: Responsive(
                           desktop: ProjectGrid(crossAxisCount: 2),
-                          extraLargeScreen: ProjectGrid(crossAxisCount: 4),
+                          extraLargeScreen: ProjectGrid(crossAxisCount: 2),
                           largeMobile: ProjectGrid(
                             crossAxisCount: 1,
                             ratio: 1.8,
