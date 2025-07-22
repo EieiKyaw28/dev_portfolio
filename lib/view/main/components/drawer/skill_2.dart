@@ -312,7 +312,7 @@ class _Skill2State extends State<Skill2> with SingleTickerProviderStateMixin {
                   'My Expertise in Flutter and Mobile Development',
                   style: Theme.of(context).textTheme.titleMedium!.copyWith(
                     color: Colors.white,
-                    fontSize: 20,
+                    fontSize: 28,
                     fontWeight: FontWeight.bold,
                   ),
                 ),

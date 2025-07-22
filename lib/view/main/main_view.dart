@@ -72,7 +72,7 @@ class _MainViewState extends State<MainView> {
   Widget build(BuildContext context) {
     return Scaffold(
       bottomNavigationBar:
-          currentIndex == 3
+          currentIndex == 4
               ? Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
@@ -122,6 +122,8 @@ class _MainViewState extends State<MainView> {
                             : currentIndex == 1
                             ? "About"
                             : currentIndex == 2
+                            ? "Work Experiences"
+                            : currentIndex == 3
                             ? "Project Experiences"
                             : "Skills",
                   ),

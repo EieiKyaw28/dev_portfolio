@@ -43,16 +43,23 @@ class _NavigationButtonListState extends State<NavigationButtonList> {
                 text: 'About',
               ),
               NavigationTextButton(
-                isSelected: widget.selectedText == 'Project Experiences',
+                isSelected: widget.selectedText == 'Work Experiences',
                 onTap: () {
                   widget.onTap(2);
+                },
+                text: 'Work Experiences',
+              ),
+              NavigationTextButton(
+                isSelected: widget.selectedText == 'Project Experiences',
+                onTap: () {
+                  widget.onTap(3);
                 },
                 text: 'Project Experiences',
               ),
               NavigationTextButton(
                 isSelected: widget.selectedText == 'Skills',
                 onTap: () {
-                  widget.onTap(3);
+                  widget.onTap(4);
                 },
                 text: 'Skills',
               ),
