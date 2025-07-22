@@ -1,7 +1,6 @@
-import 'dart:developer';
-
 import 'package:flutter/material.dart';
 import 'package:portfolio/res/constants.dart';
+import 'package:portfolio/view%20model/responsive.dart';
 import 'package:portfolio/view/projects/components/title_text.dart';
 
 import 'components/navigation_button_list.dart';
@@ -59,7 +58,6 @@ class _MainViewState extends State<MainView> {
   }
 
   void scrollToIndex(int index) {
-    log("Scroll Index : ${index}");
     final context = sectionKeys[index].currentContext;
     if (context != null) {
       Scrollable.ensureVisible(
@@ -92,24 +90,25 @@ class _MainViewState extends State<MainView> {
       body: Center(
         child: Column(
           children: [
-            SizedBox(height: 30),
+            SizedBox(height: Responsive.isMobile(context) ? 50 : 30),
 
             Padding(
               padding: const EdgeInsets.all(10),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  ShaderMask(
-                    shaderCallback: (bounds) {
-                      return LinearGradient(
-                        colors: [g1Color, g2Color],
-                      ).createShader(bounds);
-                    },
-                    child: TitleText(
-                      prefix: '',
-                      title: 'Welcom to my portfolio',
+                  if (!Responsive.isMobile(context))
+                    ShaderMask(
+                      shaderCallback: (bounds) {
+                        return LinearGradient(
+                          colors: [g1Color, g2Color],
+                        ).createShader(bounds);
+                      },
+                      child: TitleText(
+                        prefix: '',
+                        title: 'Welcom to my portfolio',
+                      ),
                     ),
-                  ),
                   NavigationButtonList(
                     onTap: (index) {
                       setState(() {

@@ -31,77 +31,6 @@ class ProjectsView extends StatelessWidget {
               child: TitleText(prefix: '9+', title: 'Major Projects'),
             ),
             SizedBox(),
-
-            // Padding(
-            //   padding: const EdgeInsets.all(20),
-            //   child: InkWell(
-            //     onTap: () {
-            //       SideSheet.right(
-            //         sheetColor: bgColor,
-            //         width: MediaQuery.of(context).size.width,
-            //         body: SafeArea(
-            //           child: Column(
-            //             children: [
-            //               Row(
-            //                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            //                 children: [
-            //                   SizedBox(),
-            //                   ShaderMask(
-            //                     shaderCallback: (bounds) {
-            //                       return LinearGradient(
-            //                         colors: [g1Color, g2Color],
-            //                       ).createShader(bounds);
-            //                     },
-            //                     child: TitleText(
-            //                       prefix: '',
-            //                       title: 'All Projects',
-            //                     ),
-            //                   ),
-            //                   Padding(
-            //                     padding: const EdgeInsets.all(10),
-            //                     child: InkWell(
-            //                       onTap: () {
-            //                         Navigator.pop(context);
-            //                       },
-            //                       child: Icon(Icons.close, color: Colors.red),
-            //                     ),
-            //                   ),
-            //                 ],
-            //               ),
-            //               Expanded(
-            //                 child: Responsive(
-            //                   desktop: ProjectGrid(crossAxisCount: 2),
-            //                   extraLargeScreen: ProjectGrid(crossAxisCount: 4),
-            //                   largeMobile: ProjectGrid(
-            //                     crossAxisCount: 1,
-            //                     ratio: 1.8,
-            //                   ),
-            //                   mobile: ProjectGrid(
-            //                     crossAxisCount: 1,
-            //                     ratio: 1.5,
-            //                   ),
-            //                   tablet: ProjectGrid(
-            //                     ratio: 1.4,
-            //                     crossAxisCount: 2,
-            //                   ),
-            //                 ),
-            //               ),
-            //             ],
-            //           ),
-            //         ),
-            //         context: context,
-            //       );
-            //     },
-            //     child: Text(
-            //       "View All",
-            //       style: TextStyle(
-            //         color: Colors.white,
-            //         fontSize: 18,
-            //         fontWeight: FontWeight.bold,
-            //       ),
-            //     ),
-            //   ),
-            // ),
           ],
         ),
         const SizedBox(height: 5),
@@ -152,14 +81,29 @@ class ProjectsView extends StatelessWidget {
                       ),
                       Expanded(
                         child: Responsive(
-                          desktop: ProjectGrid(crossAxisCount: 2),
-                          extraLargeScreen: ProjectGrid(crossAxisCount: 2),
+                          desktop: ProjectGrid(
+                            crossAxisCount: 2,
+                            needScroll: true,
+                          ),
+                          extraLargeScreen: ProjectGrid(
+                            crossAxisCount: 2,
+                            needScroll: true,
+                          ),
                           largeMobile: ProjectGrid(
                             crossAxisCount: 1,
                             ratio: 1.8,
+                            needScroll: true,
                           ),
-                          mobile: ProjectGrid(crossAxisCount: 1, ratio: 1.5),
-                          tablet: ProjectGrid(ratio: 1.4, crossAxisCount: 2),
+                          mobile: ProjectGrid(
+                            crossAxisCount: 1,
+                            ratio: 1.5,
+                            needScroll: true,
+                          ),
+                          tablet: ProjectGrid(
+                            ratio: 1.4,
+                            crossAxisCount: 2,
+                            needScroll: true,
+                          ),
                         ),
                       ),
                     ],

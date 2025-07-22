@@ -10,17 +10,20 @@ class ProjectGrid extends StatelessWidget {
   final int crossAxisCount;
   final double ratio;
   final int? projectLength;
+  final bool? needScroll;
   ProjectGrid({
     super.key,
     this.crossAxisCount = 3,
     this.ratio = 1.3,
     this.projectLength,
+    this.needScroll,
   });
   final controller = Get.put(ProjectController());
   @override
   Widget build(BuildContext context) {
     final isDesktop = Responsive.isDesktop(context);
     return GridView.builder(
+      physics: (needScroll == true) ? null : NeverScrollableScrollPhysics(),
       shrinkWrap: true,
       padding: const EdgeInsets.symmetric(horizontal: 10),
       itemCount: projectLength ?? ProjectModel.projects.length,
@@ -28,7 +31,7 @@ class ProjectGrid extends StatelessWidget {
         crossAxisSpacing: 1,
         crossAxisCount: crossAxisCount,
         childAspectRatio: ratio,
-        mainAxisExtent: isDesktop ? 326 : 370,
+        mainAxisExtent: isDesktop ? 326 : 340,
         mainAxisSpacing: 1,
       ),
       itemBuilder: (context, index) {

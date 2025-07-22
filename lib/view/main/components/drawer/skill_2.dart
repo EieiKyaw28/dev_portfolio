@@ -302,93 +302,97 @@ class _Skill2State extends State<Skill2> with SingleTickerProviderStateMixin {
             children: [
               ShaderMask(
                 shaderCallback: (bounds) {
-                  return LinearGradient(
+                  return const LinearGradient(
+                    end: Alignment.centerRight,
+                    begin: Alignment.centerLeft,
                     colors: [g1Color, g2Color],
                   ).createShader(bounds);
                 },
-                child: TitleText(
-                  prefix: '',
-                  title: 'My Expertise in Flutter and Mobile Development',
+                child: Text(
+                  'My Expertise in Flutter and Mobile Development',
+                  style: Theme.of(context).textTheme.titleMedium!.copyWith(
+                    color: Colors.white,
+                    fontSize: 20,
+                    fontWeight: FontWeight.bold,
+                  ),
                 ),
               ),
 
               SizedBox(height: 10),
 
               SizedBox(
-                height: MediaQuery.of(context).size.height * .7,
-                child: SingleChildScrollView(
-                  child: Column(
-                    children: [
-                      Row(
-                        children: [
-                          Expanded(
-                            child: Padding(
-                              padding: const EdgeInsets.only(top: 8),
-                              child: _skillComponent(
-                                stateManagement,
-                                Colors.pink.shade400,
-                                "State Management",
-                              ),
+                // height: MediaQuery.of(context).size.height * .7,
+                child: Column(
+                  children: [
+                    Row(
+                      children: [
+                        Expanded(
+                          child: Padding(
+                            padding: const EdgeInsets.only(top: 8),
+                            child: _skillComponent(
+                              stateManagement,
+                              Colors.pink.shade400,
+                              "State Management",
                             ),
                           ),
-                          SizedBox(width: 10),
-                          Expanded(
-                            child: Padding(
-                              padding: const EdgeInsets.only(top: 8),
-                              child: _skillComponent(
-                                backend,
-                                Colors.white,
-                                "Backend",
-                              ),
+                        ),
+                        SizedBox(width: 20),
+                        Expanded(
+                          child: Padding(
+                            padding: const EdgeInsets.only(top: 8),
+                            child: _skillComponent(
+                              backend,
+                              Colors.white,
+                              "Backend",
                             ),
                           ),
-                        ],
-                      ),
-                      SizedBox(height: 10),
-                      Row(
-                        children: [
-                          Expanded(
-                            child: Padding(
-                              padding: const EdgeInsets.only(top: 8.0),
-                              child: _skillComponent(
-                                database,
-                                Colors.purple.shade200,
-                                "Database",
-                              ),
+                        ),
+                      ],
+                    ),
+                    SizedBox(height: 10),
+                    Row(
+                      children: [
+                        Expanded(
+                          child: Padding(
+                            padding: const EdgeInsets.only(top: 8.0),
+                            child: _skillComponent(
+                              database,
+                              Colors.purple.shade200,
+                              "Database",
                             ),
                           ),
-                          SizedBox(width: 10),
-                          Expanded(
-                            child: Padding(
-                              padding: const EdgeInsets.only(top: 8.0),
-                              child: _skillComponent(
-                                development,
-                                Colors.amber,
-                                "Development",
-                              ),
+                        ),
+                        SizedBox(width: 20),
+                        Expanded(
+                          child: Padding(
+                            padding: const EdgeInsets.only(top: 8.0),
+                            child: _skillComponent(
+                              development,
+                              Colors.amber,
+                              "Development",
                             ),
                           ),
-                        ],
-                      ),
-                      SizedBox(height: 10),
+                        ),
+                      ],
+                    ),
+                    SizedBox(height: 10),
 
-                      Row(
-                        children: [
-                          Expanded(
-                            child: Padding(
-                              padding: const EdgeInsets.only(top: 8),
-                              child: _skillComponent(
-                                other,
-                                Colors.blue.shade200,
-                                "Other",
-                              ),
+                    Row(
+                      children: [
+                        Expanded(
+                          child: Padding(
+                            padding: const EdgeInsets.only(top: 8),
+                            child: _skillComponent(
+                              other,
+                              Colors.blue.shade200,
+                              "Other",
                             ),
                           ),
-                          Expanded(child: SizedBox(width: 10)),
-                        ],
-                      ),
-                    ],
-                  ),
+                        ),
+                        Expanded(child: SizedBox(width: 10)),
+                      ],
+                    ),
+                  ],
                 ),
               ),
             ],
