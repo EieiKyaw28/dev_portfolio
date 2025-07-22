@@ -24,8 +24,8 @@ class _NavigationButtonListState extends State<NavigationButtonList> {
       builder: (context, value, child) {
         return Transform.scale(
           scale: value,
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          child: Wrap(
+            //  mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               NavigationTextButton(
                 isSelected: widget.selectedText == 'Home',

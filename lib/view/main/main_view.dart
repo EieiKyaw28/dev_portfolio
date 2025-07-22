@@ -91,13 +91,31 @@ class _MainViewState extends State<MainView> {
         child: Column(
           children: [
             SizedBox(height: Responsive.isMobile(context) ? 50 : 30),
-
-            Padding(
-              padding: const EdgeInsets.all(10),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  if (!Responsive.isMobile(context))
+            if (Responsive.isMobile(context))
+              NavigationButtonList(
+                onTap: (index) {
+                  setState(() {
+                    currentIndex = index;
+                  });
+                  scrollToIndex(index);
+                },
+                selectedText:
+                    currentIndex == 0
+                        ? 'Home'
+                        : currentIndex == 1
+                        ? "About"
+                        : currentIndex == 2
+                        ? "Work Experiences"
+                        : currentIndex == 3
+                        ? "Project Experiences"
+                        : "Skills",
+              )
+            else
+              Padding(
+                padding: const EdgeInsets.all(10),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
                     ShaderMask(
                       shaderCallback: (bounds) {
                         return LinearGradient(
@@ -109,27 +127,27 @@ class _MainViewState extends State<MainView> {
                         title: 'Welcom to my portfolio',
                       ),
                     ),
-                  NavigationButtonList(
-                    onTap: (index) {
-                      setState(() {
-                        currentIndex = index;
-                      });
-                      scrollToIndex(index);
-                    },
-                    selectedText:
-                        currentIndex == 0
-                            ? 'Home'
-                            : currentIndex == 1
-                            ? "About"
-                            : currentIndex == 2
-                            ? "Work Experiences"
-                            : currentIndex == 3
-                            ? "Project Experiences"
-                            : "Skills",
-                  ),
-                ],
+                    NavigationButtonList(
+                      onTap: (index) {
+                        setState(() {
+                          currentIndex = index;
+                        });
+                        scrollToIndex(index);
+                      },
+                      selectedText:
+                          currentIndex == 0
+                              ? 'Home'
+                              : currentIndex == 1
+                              ? "About"
+                              : currentIndex == 2
+                              ? "Work Experiences"
+                              : currentIndex == 3
+                              ? "Project Experiences"
+                              : "Skills",
+                    ),
+                  ],
+                ),
               ),
-            ),
             Expanded(
               child: SingleChildScrollView(
                 controller: scrollController,

@@ -516,50 +516,87 @@ class _AboutPageState extends State<AboutPage> with TickerProviderStateMixin {
                         ],
                       ),
                       SizedBox(height: 20),
+
                       Row(
                         children: [
-                          _ContainerWidgt(icon: Icons.location_pin),
-                          SizedBox(width: 10),
-                          Text(
-                            "Yangon, Myanmar",
-                            style: TextStyle(fontSize: 16, color: Colors.white),
+                          Expanded(
+                            child: Row(
+                              children: [
+                                Icon(Icons.location_pin, color: g1Color),
+                                SizedBox(width: 2),
+                                Expanded(
+                                  child: Text(
+                                    "Yangon, Myanmar",
+                                    style: TextStyle(
+                                      fontSize: 14,
+                                      color: Colors.white,
+                                    ),
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ),
+                          Expanded(
+                            child: Row(
+                              children: [
+                                Icon(Icons.phone, color: g1Color),
+                                SizedBox(width: 2),
+                                Expanded(
+                                  child: Text(
+                                    "09787027464",
+                                    style: TextStyle(
+                                      fontSize: 14,
+                                      color: Colors.white,
+                                    ),
+                                  ),
+                                ),
+                              ],
+                            ),
                           ),
                         ],
                       ),
                       SizedBox(height: 20),
                       Row(
                         children: [
-                          _ContainerWidgt(icon: Icons.phone),
-                          SizedBox(width: 10),
-                          Text(
-                            "09787027464",
-                            style: TextStyle(fontSize: 16, color: Colors.white),
+                          Expanded(
+                            child: Row(
+                              children: [
+                                Icon(Icons.email, color: g1Color),
+
+                                SizedBox(width: 2),
+                                Expanded(
+                                  child: Text(
+                                    "eieikyaw.dev@gmail.com",
+                                    style: TextStyle(
+                                      fontSize: 14,
+                                      color: Colors.white,
+                                    ),
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ),
+                          Expanded(
+                            child: Row(
+                              children: [
+                                Icon(Icons.sms, color: g1Color),
+                                SizedBox(width: 2),
+                                Expanded(
+                                  child: Text(
+                                    "+959787027464",
+                                    style: TextStyle(
+                                      fontSize: 14,
+                                      color: Colors.white,
+                                    ),
+                                  ),
+                                ),
+                              ],
+                            ),
                           ),
                         ],
                       ),
-                      SizedBox(height: 20),
-                      Row(
-                        children: [
-                          _ContainerWidgt(icon: Icons.email),
-                          SizedBox(width: 10),
-                          Text(
-                            "eieikyaw.dev@gmail.com",
-                            style: TextStyle(fontSize: 16, color: Colors.white),
-                          ),
-                        ],
-                      ),
-                      SizedBox(height: 20),
-                      Row(
-                        children: [
-                          _ContainerWidgt(icon: Icons.sms),
-                          SizedBox(width: 10),
-                          Text(
-                            "+959787027464",
-                            style: TextStyle(fontSize: 16, color: Colors.white),
-                          ),
-                        ],
-                      ),
-                      SizedBox(height: 20),
+
+                      SizedBox(height: 30),
                       Row(
                         children: [
                           _ContainerWidgt(icon: Icons.cast_for_education),

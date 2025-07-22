@@ -11,17 +11,14 @@ class HomePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.all(20),
-      child: MainView(
-        pages: [
-          const Introduction(),
-          AboutPage(),
-          Experience(),
-          ProjectsView(),
-          Skill2(),
-        ],
-      ),
+    return MainView(
+      pages: [
+        const Introduction(),
+        AboutPage(),
+        Experience(),
+        ProjectsView(),
+        Skill2(),
+      ],
     );
   }
 }

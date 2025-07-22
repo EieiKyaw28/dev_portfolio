@@ -56,10 +56,19 @@ class Experience extends StatelessWidget {
                       children: [
                         Row(
                           children: [
-                            Image.asset("assets/images/za.png"),
-                            Text(
-                              "Za Information Technology Co.,Ltd.",
-                              style: TextStyle(color: Colors.white),
+                            Image.asset(
+                              "assets/images/za.png",
+                              height: Responsive.isMobile(context) ? 70 : null,
+                              width: Responsive.isMobile(context) ? 70 : null,
+                            ),
+                            Expanded(
+                              child: Text(
+                                "Za Information Technology Co.,Ltd.",
+                                style: TextStyle(
+                                  color: Colors.white,
+                                  fontWeight: FontWeight.bold,
+                                ),
+                              ),
                             ),
                             SizedBox(width: 5),
                             Tooltip(
@@ -85,43 +94,43 @@ class Experience extends StatelessWidget {
                           "❑ Built cross-platform apps using Flutter and Kotlin (Compose)",
                           style: TextStyle(color: Colors.white),
                         ),
-                        SizedBox(height: 3),
+                        SizedBox(height: Responsive.isMobile(context) ? 5 : 3),
 
                         Text(
                           "❑ Integrated REST APIs, WebSocket for real-time features (chat, updates)",
                           style: TextStyle(color: Colors.white),
                         ),
-                        SizedBox(height: 3),
+                        SizedBox(height: Responsive.isMobile(context) ? 5 : 3),
 
                         Text(
                           "❑ Used Firebase, Supabase, MongoDB Atlas for scalable backends",
                           style: TextStyle(color: Colors.white),
                         ),
-                        SizedBox(height: 3),
+                        SizedBox(height: Responsive.isMobile(context) ? 5 : 3),
 
                         Text(
                           "❑ Implemented CI/CD and Flutter testing (unit, widget)",
                           style: TextStyle(color: Colors.white),
                         ),
-                        SizedBox(height: 3),
+                        SizedBox(height: Responsive.isMobile(context) ? 5 : 3),
 
                         Text(
                           "❑ Designed responsive UI with Material/Cupertino widgets",
                           style: TextStyle(color: Colors.white),
                         ),
-                        SizedBox(height: 3),
+                        SizedBox(height: Responsive.isMobile(context) ? 5 : 3),
 
                         Text(
                           "❑ Integrated of Sunmi POS, Bluetooth thermal, and laser printers using standard print drivers",
                           style: TextStyle(color: Colors.white),
                         ),
-                        SizedBox(height: 3),
+                        SizedBox(height: Responsive.isMobile(context) ? 5 : 3),
 
                         Text(
                           "❑ Integrated location-based services and interactive maps in Flutter apps using Google Maps API, OSM and Geolocator",
                           style: TextStyle(color: Colors.white),
                         ),
-                        SizedBox(height: 3),
+                        SizedBox(height: Responsive.isMobile(context) ? 5 : 3),
                         Text(
                           "❑ Collaborated with designers and backend teams in Agile/Scrum workflow.",
                           style: TextStyle(color: Colors.white),
