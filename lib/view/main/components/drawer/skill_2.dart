@@ -237,7 +237,7 @@ class _Skill2State extends State<Skill2> with SingleTickerProviderStateMixin {
               ),
 
               Padding(
-                padding: const EdgeInsets.all(20),
+                padding: const EdgeInsets.all(30),
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [

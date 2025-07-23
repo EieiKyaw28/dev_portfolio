@@ -122,10 +122,7 @@ class _MainViewState extends State<MainView> {
                           colors: [g1Color, g2Color],
                         ).createShader(bounds);
                       },
-                      child: TitleText(
-                        prefix: '',
-                        title: 'Welcom to my portfolio',
-                      ),
+                      child: Text('Welcom to my portfolio'),
                     ),
                     NavigationButtonList(
                       onTap: (index) {

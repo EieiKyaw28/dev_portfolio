@@ -1,6 +1,7 @@
 import 'package:flutter/foundation.dart' show kIsWeb;
 import 'package:flutter/material.dart';
 import 'package:lottie/lottie.dart';
+import 'package:portfolio/view/projects/components/title_text.dart';
 import '../../../res/constants.dart';
 import '../../../view model/responsive.dart';
 import 'animated_texts_componenets.dart';
@@ -45,9 +46,9 @@ class IntroBody extends StatelessWidget {
                               colors: [g1Color, g2Color],
                             ).createShader(bounds);
                           },
-                          child: Text(
-                            "Mobile Developer ",
-                            style: TextStyle(fontSize: 20),
+                          child: TitleText(
+                            prefix: '',
+                            title: "Mobile Developer ",
                           ),
                         ),
                       ),

@@ -4,13 +4,20 @@ import 'package:portfolio/res/constants.dart';
 import 'package:portfolio/view%20model/responsive.dart';
 import 'package:portfolio/view/projects/components/title_text.dart';
 
-class Experience extends StatelessWidget {
+class Experience extends StatefulWidget {
   const Experience({super.key});
+
+  @override
+  State<Experience> createState() => _ExperienceState();
+}
+
+class _ExperienceState extends State<Experience> {
+  int selectedIndex = 0;
 
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.all(20),
+      padding: const EdgeInsets.all(30),
       child: Column(
         children: [
           ShaderMask(
@@ -49,94 +56,221 @@ class Experience extends StatelessWidget {
                     ),
                     borderRadius: BorderRadius.circular(10),
                   ),
-                  child: Padding(
-                    padding: const EdgeInsets.all(10),
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      if (Responsive.isDesktop(context))
                         Row(
                           children: [
-                            Image.asset(
-                              "assets/images/za.png",
-                              height: Responsive.isMobile(context) ? 70 : null,
-                              width: Responsive.isMobile(context) ? 70 : null,
+                            Expanded(
+                              child: SizedBox(
+                                height: 60,
+                                child: ListView.builder(
+                                  scrollDirection: Axis.horizontal,
+                                  shrinkWrap: true,
+                                  physics: NeverScrollableScrollPhysics(),
+
+                                  itemCount: works.length,
+                                  itemBuilder: (context, index) {
+                                    final work = works[index];
+                                    return InkWell(
+                                      splashColor: Colors.transparent,
+                                      onTap: () {
+                                        selectedIndex = index;
+                                        setState(() {});
+                                      },
+                                      child: Padding(
+                                        padding: const EdgeInsets.all(4),
+                                        child: Container(
+                                          decoration: BoxDecoration(
+                                            boxShadow:
+                                                selectedIndex == index
+                                                    ? const [
+                                                      BoxShadow(
+                                                        color: g1Color,
+                                                        offset: Offset(0, -1),
+                                                        blurRadius: 2,
+                                                      ),
+                                                      BoxShadow(
+                                                        color: g2Color,
+                                                        offset: Offset(0, 1),
+                                                        blurRadius: 2,
+                                                      ),
+                                                    ]
+                                                    : null,
+                                            color: bgColor,
+                                            borderRadius: BorderRadius.circular(
+                                              10,
+                                            ),
+                                          ),
+
+                                          child: Padding(
+                                            padding: const EdgeInsets.all(10),
+                                            child: Row(
+                                              children: [
+                                                Row(
+                                                  children: [
+                                                    Image.asset(
+                                                      work.image,
+                                                      height:
+                                                          Responsive.isMobile(
+                                                                context,
+                                                              )
+                                                              ? 70
+                                                              : 40,
+                                                      width:
+                                                          Responsive.isMobile(
+                                                                context,
+                                                              )
+                                                              ? 70
+                                                              : 40,
+                                                    ),
+                                                    SizedBox(width: 5),
+                                                    Text(
+                                                      work.name,
+                                                      style: TextStyle(
+                                                        color: Colors.white,
+                                                        fontWeight:
+                                                            FontWeight.bold,
+                                                      ),
+                                                    ),
+                                                    SizedBox(width: 5),
+                                                    Tooltip(
+                                                      message: work.ref,
+                                                      child: Icon(
+                                                        Icons.info,
+                                                        color: Colors.grey,
+                                                      ),
+                                                    ),
+                                                  ],
+                                                ),
+                                              ],
+                                            ),
+                                          ),
+                                        ),
+                                      ),
+                                    );
+                                  },
+                                ),
+                              ),
                             ),
+                          ],
+                        )
+                      else
+                        Row(
+                          children: [
+                            Expanded(
+                              child: SizedBox(
+                                height: 100,
+                                child: ListView.builder(
+                                  scrollDirection: Axis.horizontal,
+                                  shrinkWrap: true,
+                                  physics: NeverScrollableScrollPhysics(),
+
+                                  itemCount: works.length,
+                                  itemBuilder: (context, index) {
+                                    final work = works[index];
+                                    return InkWell(
+                                      splashColor: Colors.transparent,
+                                      onTap: () {
+                                        selectedIndex = index;
+                                        setState(() {});
+                                      },
+                                      child: Padding(
+                                        padding: const EdgeInsets.all(4),
+                                        child: Container(
+                                          // width: 200,
+                                          decoration: BoxDecoration(
+                                            boxShadow:
+                                                selectedIndex == index
+                                                    ? const [
+                                                      BoxShadow(
+                                                        color: g1Color,
+                                                        offset: Offset(0, -1),
+                                                        blurRadius: 2,
+                                                      ),
+                                                      BoxShadow(
+                                                        color: g2Color,
+                                                        offset: Offset(0, 1),
+                                                        blurRadius: 2,
+                                                      ),
+                                                    ]
+                                                    : null,
+                                            color: bgColor,
+                                            borderRadius: BorderRadius.circular(
+                                              10,
+                                            ),
+                                          ),
+
+                                          child: Padding(
+                                            padding: const EdgeInsets.all(10),
+                                            child: Column(
+                                              children: [
+                                                Image.asset(
+                                                  work.image,
+                                                  height:
+                                                      Responsive.isMobile(
+                                                            context,
+                                                          )
+                                                          ? 70
+                                                          : 40,
+                                                  width:
+                                                      Responsive.isMobile(
+                                                            context,
+                                                          )
+                                                          ? 70
+                                                          : 40,
+                                                ),
+                                              ],
+                                            ),
+                                          ),
+                                        ),
+                                      ),
+                                    );
+                                  },
+                                ),
+                              ),
+                            ),
+                          ],
+                        ),
+                      if (Responsive.isMobile(context)) ...[
+                        SizedBox(height: 12),
+
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
                             Expanded(
                               child: Text(
-                                "Za Information Technology Co.,Ltd.",
+                                works[selectedIndex].name,
                                 style: TextStyle(
+                                  fontSize: 18,
                                   color: Colors.white,
                                   fontWeight: FontWeight.bold,
                                 ),
                               ),
                             ),
-                            SizedBox(width: 5),
                             Tooltip(
-                              message:
-                                  "Reference\nMr Zaw Min Aung\nCo-founder & managing director\ncontact@zawminaung.net\n+959765433809",
+                              message: works[selectedIndex].ref,
                               child: Icon(Icons.info, color: Colors.grey),
                             ),
                           ],
                         ),
-                        SizedBox(height: 10),
-                        Text(
-                          "Mobile Developer (Flutter & Jetpack Compose)",
-                          style: TextStyle(
-                            fontWeight: FontWeight.bold,
-                            color: Colors.white,
-                          ),
-                        ),
-                        SizedBox(height: 10),
-                        Text("2022  May - 2025 July"),
-                        SizedBox(height: 10),
-
-                        Text(
-                          "❑ Built cross-platform apps using Flutter and Kotlin (Compose)",
-                          style: TextStyle(color: Colors.white),
-                        ),
-                        SizedBox(height: Responsive.isMobile(context) ? 5 : 3),
-
-                        Text(
-                          "❑ Integrated REST APIs, WebSocket for real-time features (chat, updates)",
-                          style: TextStyle(color: Colors.white),
-                        ),
-                        SizedBox(height: Responsive.isMobile(context) ? 5 : 3),
-
-                        Text(
-                          "❑ Used Firebase, Supabase, MongoDB Atlas for scalable backends",
-                          style: TextStyle(color: Colors.white),
-                        ),
-                        SizedBox(height: Responsive.isMobile(context) ? 5 : 3),
-
-                        Text(
-                          "❑ Implemented CI/CD and Flutter testing (unit, widget)",
-                          style: TextStyle(color: Colors.white),
-                        ),
-                        SizedBox(height: Responsive.isMobile(context) ? 5 : 3),
-
-                        Text(
-                          "❑ Designed responsive UI with Material/Cupertino widgets",
-                          style: TextStyle(color: Colors.white),
-                        ),
-                        SizedBox(height: Responsive.isMobile(context) ? 5 : 3),
-
-                        Text(
-                          "❑ Integrated of Sunmi POS, Bluetooth thermal, and laser printers using standard print drivers",
-                          style: TextStyle(color: Colors.white),
-                        ),
-                        SizedBox(height: Responsive.isMobile(context) ? 5 : 3),
-
-                        Text(
-                          "❑ Integrated location-based services and interactive maps in Flutter apps using Google Maps API, OSM and Geolocator",
-                          style: TextStyle(color: Colors.white),
-                        ),
-                        SizedBox(height: Responsive.isMobile(context) ? 5 : 3),
-                        Text(
-                          "❑ Collaborated with designers and backend teams in Agile/Scrum workflow.",
-                          style: TextStyle(color: Colors.white),
-                        ),
                       ],
-                    ),
+                      SizedBox(height: 12),
+                      Text(
+                        works[selectedIndex].role,
+                        style: TextStyle(
+                          fontWeight: FontWeight.bold,
+                          color: Colors.white,
+                        ),
+                      ),
+                      SizedBox(height: 10),
+                      Text(works[selectedIndex].year),
+                      SizedBox(height: 10),
+
+                      for (var x in works[selectedIndex].exp)
+                        Text(x, style: TextStyle(color: Colors.white)),
+                    ],
                   ),
                 ),
               ),
@@ -150,3 +284,56 @@ class Experience extends StatelessWidget {
     );
   }
 }
+
+class WorkExperienceModel {
+  final String name;
+  final String image;
+  final String ref;
+  final String role;
+  final String year;
+  final List<String> exp;
+
+  WorkExperienceModel({
+    required this.name,
+    required this.image,
+    required this.ref,
+    required this.exp,
+    required this.role,
+    required this.year,
+  });
+}
+
+List<WorkExperienceModel> works = [
+  WorkExperienceModel(
+    name: "Za Information Technology Co.,Ltd.",
+    image: 'assets/images/za.png',
+    role: 'Mobile Developer (Flutter & Jetpack Compose)',
+    year: '2023 May - 2025 July',
+    ref:
+        '"Reference\nMr Zaw Min Aung\nCo-founder & managing director\ncontact@zawminaung.net\n+959765433809"',
+    exp: [
+      "❑ Built cross-platform apps using Flutter and Kotlin (Compose)",
+      "❑ Integrated REST APIs, WebSocket for real-time features (chat, updates)",
+      "❑ Implemented CI/CD and Flutter testing (unit, widget)",
+      "❑ Designed responsive UI with Material/Cupertino widgets",
+      "❑ Integrated of Sunmi POS, Bluetooth thermal, and laser printers using standard print drivers",
+      "❑ Integrated location-based services and interactive maps in Flutter apps using Google Maps API, OSM and Geolocator",
+      "❑ Collaborated with designers and backend teams in Agile/Scrum workflow.",
+    ],
+  ),
+  WorkExperienceModel(
+    name: "Food Burma",
+    image: 'assets/images/foodburma.jpg',
+    role: 'Mobile Developer',
+    year: '2022 April - 2023 April',
+    ref:
+        "Reference\nMr Zwel Htet Wai Yan\nCo-founder & managing director\nfoodburma.dev@gmail.com\nzweldev@gmail.com\n+959441211682",
+    exp: [
+      "❑ Turned UI designs into smooth, responsive mobile interfaces",
+      "❑ Built app logic with the BLoC pattern",
+      "❑ Integrated RESTful APIs for real-time backend communication",
+      "❑ Prioritized user experience and performance throughout the app",
+      "❑  Collaborated closely with other devs and participated in sprint planning",
+    ],
+  ),
+];
