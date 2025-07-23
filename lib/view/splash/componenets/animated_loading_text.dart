@@ -46,6 +46,7 @@ class AnimatedLoadingText extends StatelessWidget {
                   ],
                 ),
                 const SizedBox(height: defaultPadding / 2),
+                
                 Text(
                   'Welcome to my portfolio',
                   style: const TextStyle(

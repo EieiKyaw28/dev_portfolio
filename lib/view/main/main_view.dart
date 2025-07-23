@@ -116,14 +116,36 @@ class _MainViewState extends State<MainView> {
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    ShaderMask(
-                      shaderCallback: (bounds) {
-                        return LinearGradient(
-                          colors: [g1Color, g2Color],
-                        ).createShader(bounds);
-                      },
-                      child: Text('Welcom to my portfolio'),
+                    Padding(
+                      padding: const EdgeInsets.only(left: 20),
+                      child: Container(
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(5),
+                          color: bgColor,
+                          boxShadow: const [
+                            BoxShadow(
+                              color: g1Color,
+                              offset: Offset(0, -1),
+                              blurRadius: 5,
+                            ),
+                            BoxShadow(
+                              color: g2Color,
+                              offset: Offset(0, 1),
+                              blurRadius: 5,
+                            ),
+                          ],
+                        ),
+                        child: ClipRRect(
+                          borderRadius: BorderRadius.circular(5),
+                          child: Image.asset(
+                            'assets/images/ei_logo.png',
+                            height: 40,
+                            width: 40,
+                          ),
+                        ),
+                      ),
                     ),
+
                     NavigationButtonList(
                       onTap: (index) {
                         setState(() {
