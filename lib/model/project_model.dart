@@ -106,7 +106,7 @@ class ProjectModel {
     ProjectModel(
       title: "Hoco Online Shopping",
       description: "Developed with RESTful APIs, WebSockets, Isar and Riverpod",
-      appPhotos: 'asstes/proj_images/hoco.png',
+      appPhotos: 'assets/proj_images/hoco.jpg',
       usersCount: 10000,
       techUsed: ["isar", "riverpod"],
       androidLink:
@@ -125,14 +125,15 @@ class ProjectModel {
       androidLink:
           "https://play.google.com/store/apps/details?id=com.marketplace.sweetyhomeb2b",
       iosLink: "https://apps.apple.com/us/app/sweety-home-b2b/id1664695779",
-      windowsLink: null,
+      windowsLink:
+          'https://apps.microsoft.com/detail/9pgq0bn6j084?hl=en-US&gl=US',
       macosLink: "https://apps.apple.com/us/app/sweety-home-b2b/id1664695779",
     ),
 
     ProjectModel(
       title: "Sweety Home Member",
       description: "Developed with RESTful APIs and Riverpod",
-      appPhotos: 'asstes/proj_images/sh_member.png',
+      appPhotos: 'assets/proj_images/sh_member.png',
       usersCount: null,
       techUsed: ["riverpod"],
       androidLink:
@@ -180,18 +181,6 @@ class ProjectModel {
     ),
 
     ProjectModel(
-      title: "Love Car",
-      description: "Developed with RESTful APIs and Bloc",
-      appPhotos: "assets/images/lovecar_logo.png",
-      usersCount: null,
-      techUsed: ["bloc"],
-      androidLink: "https://play.google.com/store/apps/details?id=love.car.mm",
-      iosLink: "https://apps.apple.com/us/app/love-car/id6739915707",
-      windowsLink: null,
-      macosLink: null,
-    ),
-
-    ProjectModel(
       title: "MP Officer",
       description:
           "Developed with Jetpack Compose with RESTful API and state management",
@@ -213,6 +202,28 @@ class ProjectModel {
       techUsed: ["jetpack"],
       androidLink:
           "https://play.google.com/store/apps/details?id=com.myanmarpostagent.zacompany.mpagent",
+      iosLink: null,
+      windowsLink: null,
+      macosLink: null,
+    ),
+    ProjectModel(
+      title: "Love Car",
+      description: "Developed with RESTful APIs and Bloc",
+      appPhotos: "assets/images/lovecar_logo.png",
+      usersCount: null,
+      techUsed: ["bloc"],
+      androidLink: "https://play.google.com/store/apps/details?id=love.car.mm",
+      iosLink: null,
+      windowsLink: null,
+      macosLink: null,
+    ),
+    ProjectModel(
+      title: "Foodburma",
+      description: "Developed with RESTful APIs and GetX",
+      appPhotos: "assets/images/foodburma.jpg",
+      usersCount: null,
+      techUsed: ["getx"],
+      androidLink: "https://apkpure.com/foodburma/com.devseasons.sarmal",
       iosLink: null,
       windowsLink: null,
       macosLink: null,

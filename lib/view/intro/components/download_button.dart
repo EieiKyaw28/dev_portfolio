@@ -12,7 +12,7 @@ class DownloadButton extends StatelessWidget {
       onTap: () {
         launchUrl(
           Uri.parse(
-            'https://drive.google.com/file/d/12YGFDK0TWXRpYCWrsC-_KifJ8fczDXgp/view?usp=sharing',
+            'https://drive.google.com/file/d/1ZAof9bfwu_uAfEQxbwoypKbqUTvoEwra/view?usp=sharing',
           ),
         );
       },

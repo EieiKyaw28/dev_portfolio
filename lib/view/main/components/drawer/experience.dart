@@ -310,7 +310,7 @@ List<WorkExperienceModel> works = [
     role: 'Mobile Developer (Flutter & Jetpack Compose)',
     year: '2023 May - 2025 July',
     ref:
-        '"Reference\nMr Zaw Min Aung\nCo-founder & managing director\ncontact@zawminaung.net\n+959765433809"',
+        'Reference\nMr Zaw Min Aung\nCo-founder & managing director\ncontact@zawminaung.net\n+959765433809"',
     exp: [
       "❑ Built cross-platform apps using Flutter and Kotlin (Compose)",
       "❑ Integrated REST APIs, WebSocket for real-time features (chat, updates)",
@@ -324,7 +324,7 @@ List<WorkExperienceModel> works = [
   WorkExperienceModel(
     name: "Food Burma",
     image: 'assets/images/foodburma.jpg',
-    role: 'Mobile Developer',
+    role: 'Mobile Developer(Flutter)',
     year: '2022 April - 2023 April',
     ref:
         "Reference\nMr Zwel Htet Wai Yan\nCo-founder & managing director\nfoodburma.dev@gmail.com\nzweldev@gmail.com\n+959441211682",
@@ -333,7 +333,7 @@ List<WorkExperienceModel> works = [
       "❑ Built app logic with the BLoC pattern",
       "❑ Integrated RESTful APIs for real-time backend communication",
       "❑ Prioritized user experience and performance throughout the app",
-      "❑  Collaborated closely with other devs and participated in sprint planning",
+      "❑ Collaborated closely with other devs and participated in sprint planning",
     ],
   ),
 ];
