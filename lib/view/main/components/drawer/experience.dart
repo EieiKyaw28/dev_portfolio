@@ -310,7 +310,7 @@ List<WorkExperienceModel> works = [
     role: 'Mobile Developer (Flutter & Jetpack Compose)',
     year: '2023 May - 2025 July',
     ref:
-        'Reference\nMr Zaw Min Aung\nCo-founder & managing director\ncontact@zawminaung.net\n+959765433809"',
+        'Reference\nMr Zaw Min Aung\nCo-founder & managing director\ncontact@zawminaung.net\n+959765433809',
     exp: [
       "❑ Built cross-platform apps using Flutter and Kotlin (Compose)",
       "❑ Integrated REST APIs, WebSocket for real-time features (chat, updates)",

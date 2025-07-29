@@ -42,7 +42,7 @@ List<SkillModel> stateManagement = [
     icon: "assets/images/getx.png",
   ),
   SkillModel(
-    name: "Jetpack Comppse",
+    name: "Jetpack Compose",
     slug: "jetpack",
     category: "state_management",
     icon: "assets/images/jetpack.png",
@@ -75,18 +75,18 @@ List<SkillModel> database = [
     category: "database",
     icon: "assets/images/hive.jpeg",
   ),
-  SkillModel(
-    name: "Cloud Firestore",
-    slug: "firebase",
-    category: "database",
-    icon: "assets/images/firestore.png",
-  ),
+  // SkillModel(
+  //   name: "Cloud Firestore",
+  //   slug: "firebase",
+  //   category: "database",
+  //   icon: "assets/images/firestore.png",
+  // ),
 ];
 
 List<SkillModel> development = [
   //! other
   SkillModel(
-    name: "Android Studio",
+    name: "Android Studiouuuu",
     slug: "android_studio",
     category: "other",
     icon: "assets/images/androidstudio.png",
@@ -412,7 +412,7 @@ class _Skill2State extends State<Skill2> with SingleTickerProviderStateMixin {
               Text(
                 title,
                 style: GoogleFonts.poppins(
-                  fontSize: 16,
+                  fontSize: 20,
                   fontWeight: FontWeight.bold,
                   color: color,
                 ),

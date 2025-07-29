@@ -54,7 +54,7 @@ class ProjectModel {
       title: "Shop Now",
       description: "Developed with Supabase, PostgreSQL, Isar and Riverpod",
       appPhotos: "assets/proj_images/flutter.png",
-      techUsed: ["supabase", "isar", "riverpod"],
+      techUsed: ["supabase", "isar", "firebase", "riverpod"],
 
       androidLink: null,
       iosLink: null,
