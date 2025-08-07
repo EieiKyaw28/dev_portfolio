@@ -16,6 +16,7 @@ class NavigationTextButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return InkWell(
+      borderRadius: BorderRadius.circular(10),
       splashColor: Colors.transparent,
       onTap: onTap,
       child: Padding(

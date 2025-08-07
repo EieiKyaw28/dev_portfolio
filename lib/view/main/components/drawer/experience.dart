@@ -327,7 +327,7 @@ List<WorkExperienceModel> works = [
     role: 'Mobile Developer(Flutter)',
     year: '2022 April - 2023 April',
     ref:
-        "Reference\nMr Zwel Htet Wai Yan\nCo-founder & managing director\nfoodburma.dev@gmail.com\nzweldev@gmail.com\n+959441211682",
+        "Reference\nMr Tayza Moe Kyaw\nCo-founder & managing director\nfoodburma.dev@gmail.com\n+959681021774",
     exp: [
       "❑ Turned UI designs into smooth, responsive mobile interfaces",
       "❑ Built app logic with the BLoC pattern",
