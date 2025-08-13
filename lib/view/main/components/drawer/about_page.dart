@@ -5,6 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:portfolio/res/constants.dart';
 import 'package:portfolio/view%20model/responsive.dart';
 import 'package:portfolio/view/projects/components/title_text.dart';
+import 'package:url_launcher/url_launcher.dart';
 import 'drawer_image.dart';
 
 class AboutPage extends StatefulWidget {
@@ -86,6 +87,17 @@ class _AboutPageState extends State<AboutPage> with TickerProviderStateMixin {
     Future.delayed(Duration(seconds: 3), () => _controller.forward());
     Future.delayed(Duration(seconds: 4), () => _controller2.forward());
     Future.delayed(Duration(seconds: 5), () => _controller3.forward());
+  }
+
+  Future<void> _launchLinkedIn() async {
+    final Uri uri = Uri.parse(
+      "https://www.linkedin.com/in/eiei-kyaw-862199257",
+    );
+    if (!await launchUrl(uri, mode: LaunchMode.externalApplication)) {
+      throw Exception(
+        'Could not launch ${"https://www.linkedin.com/in/eiei-kyaw-862199257"}',
+      );
+    }
   }
 
   @override
@@ -349,17 +361,24 @@ class _AboutPageState extends State<AboutPage> with TickerProviderStateMixin {
                                                 ),
                                               ],
                                             ),
+                                            SizedBox(height: 20),
+
                                             Row(
                                               children: [
                                                 _ContainerWidgt(
                                                   icon: Icons.language,
                                                 ),
                                                 SizedBox(width: 10),
-                                                Text(
-                                                  "https://www.linkedin.com/in/eiei-kyaw-862199257/",
-                                                  style: TextStyle(
-                                                    fontSize: 16,
-                                                    color: Colors.white,
+                                                InkWell(
+                                                  onTap: () {
+                                                    _launchLinkedIn();
+                                                  },
+                                                  child: Text(
+                                                    "https://www.linkedin.com/in/eiei-kyaw-862199257",
+                                                    style: TextStyle(
+                                                      fontSize: 16,
+                                                      color: Colors.white,
+                                                    ),
                                                   ),
                                                 ),
                                               ],
