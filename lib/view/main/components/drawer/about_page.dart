@@ -349,6 +349,21 @@ class _AboutPageState extends State<AboutPage> with TickerProviderStateMixin {
                                                 ),
                                               ],
                                             ),
+                                            Row(
+                                              children: [
+                                                _ContainerWidgt(
+                                                  icon: Icons.language,
+                                                ),
+                                                SizedBox(width: 10),
+                                                Text(
+                                                  "https://www.linkedin.com/in/eiei-kyaw-862199257/",
+                                                  style: TextStyle(
+                                                    fontSize: 16,
+                                                    color: Colors.white,
+                                                  ),
+                                                ),
+                                              ],
+                                            ),
                                           ],
                                         ),
                                       ),
