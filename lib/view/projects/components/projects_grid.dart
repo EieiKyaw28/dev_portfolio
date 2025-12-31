@@ -11,6 +11,7 @@ class ProjectGrid extends StatelessWidget {
   final double ratio;
   final int? projectLength;
   final bool? needScroll;
+
   ProjectGrid({
     super.key,
     this.crossAxisCount = 3,
@@ -22,33 +23,35 @@ class ProjectGrid extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final isDesktop = Responsive.isDesktop(context);
-    return GridView.builder(
-      physics: (needScroll == true) ? null : NeverScrollableScrollPhysics(),
-      shrinkWrap: true,
-      padding: const EdgeInsets.symmetric(horizontal: 10),
-      itemCount: projectLength ?? ProjectModel.projects.length,
-      gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-        crossAxisSpacing: 1,
-        crossAxisCount: crossAxisCount,
-        childAspectRatio: ratio,
-        mainAxisExtent: isDesktop ? 326 : 340,
-        mainAxisSpacing: 1,
-      ),
-      itemBuilder: (context, index) {
-        return AnimatedContainer(
-          duration: const Duration(milliseconds: 200),
-          margin: const EdgeInsets.symmetric(
-            vertical: defaultPadding,
-            horizontal: defaultPadding,
-          ),
-          decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(30),
 
-            boxShadow: [],
-          ),
-          child: CardItem(project: ProjectModel.projects[index]),
-        );
-      },
-    );
+    return Obx(() {
+      final projects = controller.filteredProjects;
+
+      return GridView.builder(
+        physics:
+            (needScroll == true) ? null : const NeverScrollableScrollPhysics(),
+        shrinkWrap: true,
+        padding: const EdgeInsets.symmetric(horizontal: 10),
+        itemCount: projectLength ?? projects.length,
+        gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+          crossAxisSpacing: 1,
+          crossAxisCount: 3,
+          childAspectRatio: ratio,
+          mainAxisExtent: isDesktop ? 400 : 340,
+          mainAxisSpacing: 1,
+        ),
+        itemBuilder: (context, index) {
+          return AnimatedContainer(
+            duration: const Duration(milliseconds: 200),
+            margin: const EdgeInsets.symmetric(
+              vertical: defaultPadding,
+              horizontal: defaultPadding,
+            ),
+            decoration: BoxDecoration(borderRadius: BorderRadius.circular(30)),
+            child: CardItem(project: projects[index]),
+          );
+        },
+      );
+    });
   }
 }

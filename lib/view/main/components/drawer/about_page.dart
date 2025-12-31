@@ -308,7 +308,7 @@ class _AboutPageState extends State<AboutPage> with TickerProviderStateMixin {
                                                 Text(
                                                   "Yangon, Myanmar",
                                                   style: TextStyle(
-                                                    fontSize: 16,
+                                                    fontSize: 14,
                                                     color: Colors.white,
                                                   ),
                                                 ),
@@ -324,7 +324,7 @@ class _AboutPageState extends State<AboutPage> with TickerProviderStateMixin {
                                                 Text(
                                                   "09787027464",
                                                   style: TextStyle(
-                                                    fontSize: 16,
+                                                    fontSize: 14,
                                                     color: Colors.white,
                                                   ),
                                                 ),
@@ -340,7 +340,7 @@ class _AboutPageState extends State<AboutPage> with TickerProviderStateMixin {
                                                 Text(
                                                   "eieikyaw.dev@gmail.com",
                                                   style: TextStyle(
-                                                    fontSize: 16,
+                                                    fontSize: 14,
                                                     color: Colors.white,
                                                   ),
                                                 ),
@@ -356,7 +356,7 @@ class _AboutPageState extends State<AboutPage> with TickerProviderStateMixin {
                                                 Text(
                                                   "+959787027464",
                                                   style: TextStyle(
-                                                    fontSize: 16,
+                                                    fontSize: 14,
                                                     color: Colors.white,
                                                   ),
                                                 ),
@@ -377,7 +377,7 @@ class _AboutPageState extends State<AboutPage> with TickerProviderStateMixin {
                                                   child: Text(
                                                     "https://www.linkedin.com/in/eiei-kyaw-862199257",
                                                     style: TextStyle(
-                                                      fontSize: 16,
+                                                      fontSize: 14,
                                                       color: Colors.white,
                                                     ),
                                                   ),

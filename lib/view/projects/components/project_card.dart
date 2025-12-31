@@ -24,14 +24,10 @@ class CardItem extends StatelessWidget {
           decoration: BoxDecoration(
             color: bgColor,
             boxShadow: const [
-              BoxShadow(color: g1Color, offset: Offset(0, -1), blurRadius: 5),
-              BoxShadow(color: g2Color, offset: Offset(0, 1), blurRadius: 5),
+              BoxShadow(color: g1Color, offset: Offset(0, -1), blurRadius: 3),
+              BoxShadow(color: g2Color, offset: Offset(0, 1), blurRadius: 3),
             ],
-            // gradient: LinearGradient(
-            //   begin: Alignment.topLeft,
-            //   end: Alignment.bottomRight,
-            //   colors: [g1Color, g2Color],
-            // ),
+
             border: Border.all(
               color: Colors.white.withOpacity(0.4),
               width: 1.5,
@@ -42,50 +38,125 @@ class CardItem extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               //  SizedBox(height: 10),
-              Text(
-                project.description,
-                style: TextStyle(color: Colors.white, fontSize: 16),
-              ),
-              Spacer(),
               Row(
+                mainAxisAlignment: MainAxisAlignment.start,
+                crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      project.techUsed.isEmpty
-                          ? Container()
-                          : Text(
-                            "Technologies Used",
-                            style: TextStyle(
-                              fontWeight: FontWeight.w900,
-                              fontSize: 12,
-                            ),
-                          ),
-                      SizedBox(height: 4),
-                      Wrap(
-                        children:
-                            project.techUsed
-                                .map(
-                                  (e) => Container(
-                                    margin: const EdgeInsets.all(0),
-                                    width: 35,
-                                    padding: const EdgeInsets.all(5),
-                                    height: 35,
-                                    child: ClipRRect(
-                                      borderRadius: BorderRadius.circular(5),
-                                      child: Image.asset(
-                                        "assets/images/$e${e == "isar" ? ".jpeg" : ".png"}",
+                  Container(
+                    height: isDesktop ? 100 : 100,
+                    width: isDesktop ? 100 : 100,
+                    decoration: BoxDecoration(
+                      color: Colors.white,
+
+                      borderRadius: BorderRadius.circular(isDesktop ? 60 : 30),
+                    ),
+                    child: ClipRRect(
+                      borderRadius: BorderRadiusGeometry.circular(
+                        isDesktop ? 10 : 30,
+                      ),
+                      child: Image.asset(
+                        project.appPhotos ?? "",
+                        fit: BoxFit.cover,
+                      ),
+                    ),
+                  ),
+                  SizedBox(width: 10),
+                  Expanded(
+                    child: Column(
+                      children: [
+                        Text(
+                          project.description,
+                          style: TextStyle(color: Colors.white, fontSize: 14),
+                        ),
+                        SizedBox(height: 10),
+                        Row(
+                          children: [
+                            Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                project.techUsed.isEmpty
+                                    ? Container()
+                                    : Text(
+                                      "Technologies Used",
+                                      style: TextStyle(
+                                        fontWeight: FontWeight.w900,
+                                        fontSize: 12,
                                       ),
                                     ),
-                                  ),
-                                )
-                                .toList(),
-                      ),
-                    ],
+                                SizedBox(height: 4),
+                                Wrap(
+                                  children:
+                                      project.techUsed
+                                          .map(
+                                            (e) => Container(
+                                              margin: const EdgeInsets.all(0),
+                                              width: 26,
+                                              padding: const EdgeInsets.all(5),
+                                              height: 26,
+                                              child: Tooltip(
+                                                message: e,
+                                                child: ClipRRect(
+                                                  borderRadius:
+                                                      BorderRadius.circular(2),
+                                                  child: Image.asset(
+                                                    "assets/images/$e${e == "isar" ? ".jpeg" : ".png"}",
+                                                  ),
+                                                ),
+                                              ),
+                                            ),
+                                          )
+                                          .toList(),
+                                ),
+                              ],
+                            ),
+                          ],
+                        ),
+                      ],
+                    ),
                   ),
                 ],
               ),
 
+              Spacer(),
+
+              // Row(
+              //   children: [
+              //     Column(
+              //       crossAxisAlignment: CrossAxisAlignment.start,
+              //       children: [
+              //         project.techUsed.isEmpty
+              //             ? Container()
+              //             : Text(
+              //               "Technologies Used",
+              //               style: TextStyle(
+              //                 fontWeight: FontWeight.w900,
+              //                 fontSize: 12,
+              //               ),
+              //             ),
+              //         SizedBox(height: 4),
+              //         Wrap(
+              //           children:
+              //               project.techUsed
+              //                   .map(
+              //                     (e) => Container(
+              //                       margin: const EdgeInsets.all(0),
+              //                       width: 35,
+              //                       padding: const EdgeInsets.all(5),
+              //                       height: 35,
+              //                       child: ClipRRect(
+              //                         borderRadius: BorderRadius.circular(5),
+              //                         child: Image.asset(
+              //                           "assets/images/$e${e == "isar" ? ".jpeg" : ".png"}",
+              //                         ),
+              //                       ),
+              //                     ),
+              //                   )
+              //                   .toList(),
+              //         ),
+              //       ],
+              //     ),
+              //   ],
+              // ),
               Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
@@ -109,8 +180,8 @@ class CardItem extends StatelessWidget {
                             margin: const EdgeInsets.only(right: 10),
                             child: Image.asset(
                               "assets/images/playstore.png",
-                              width: 30,
-                              height: 30,
+                              width: 20,
+                              height: 20,
                               fit: BoxFit.fill,
                             ),
                           ),
@@ -127,9 +198,9 @@ class CardItem extends StatelessWidget {
                             margin: const EdgeInsets.only(right: 10),
                             child: Image.asset(
                               "assets/images/appstore.png",
-                              width: 30,
+                              width: 20,
                               fit: BoxFit.fitHeight,
-                              height: 30,
+                              height: 20,
                             ),
                           ),
                         ),
@@ -145,9 +216,9 @@ class CardItem extends StatelessWidget {
                             margin: const EdgeInsets.only(right: 10),
                             child: Image.asset(
                               "assets/images/windows.png",
-                              width: 30,
+                              width: 20,
                               fit: BoxFit.fill,
-                              height: 30,
+                              height: 20,
                             ),
                           ),
                         ),
@@ -163,9 +234,9 @@ class CardItem extends StatelessWidget {
                             margin: const EdgeInsets.only(right: 10),
                             child: Image.asset(
                               "assets/images/macos.png",
-                              width: 30,
+                              width: 20,
                               fit: BoxFit.cover,
-                              height: 30,
+                              height: 20,
                             ),
                           ),
                         ),
@@ -181,9 +252,9 @@ class CardItem extends StatelessWidget {
                             margin: const EdgeInsets.only(right: 10),
                             child: Image.asset(
                               "assets/images/git.png",
-                              width: 30,
+                              width: 20,
                               fit: BoxFit.fitHeight,
-                              height: 30,
+                              height: 20,
                             ),
                           ),
                         ),
@@ -214,23 +285,23 @@ class CardItem extends StatelessWidget {
             ),
           ),
         ),
-        Positioned(
-          bottom: isDesktop ? 0 : 10,
-          right: isDesktop ? 0 : 0,
-          child: Container(
-            height: isDesktop ? 200 : 100,
-            width: isDesktop ? 200 : 100,
-            decoration: BoxDecoration(
-              color: Colors.white,
+        // Positioned(
+        //   bottom: isDesktop ? 0 : 10,
+        //   right: isDesktop ? 0 : 0,
+        //   child: Container(
+        //     height: isDesktop ? 200 : 100,
+        //     width: isDesktop ? 200 : 100,
+        //     decoration: BoxDecoration(
+        //       color: Colors.white,
 
-              borderRadius: BorderRadius.circular(isDesktop ? 60 : 30),
-            ),
-            child: ClipRRect(
-              borderRadius: BorderRadiusGeometry.circular(isDesktop ? 60 : 30),
-              child: Image.asset(project.appPhotos ?? "", fit: BoxFit.cover),
-            ),
-          ),
-        ),
+        //       borderRadius: BorderRadius.circular(isDesktop ? 60 : 30),
+        //     ),
+        //     child: ClipRRect(
+        //       borderRadius: BorderRadiusGeometry.circular(isDesktop ? 60 : 30),
+        //       child: Image.asset(project.appPhotos ?? "", fit: BoxFit.cover),
+        //     ),
+        //   ),
+        // ),
       ],
     );
   }

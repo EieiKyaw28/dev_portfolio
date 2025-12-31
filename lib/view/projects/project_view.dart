@@ -4,6 +4,7 @@ import 'package:get/get.dart';
 import 'package:portfolio/res/constants.dart';
 import 'package:portfolio/view%20model/getx_controllers/projects_controller.dart';
 import 'package:portfolio/view%20model/responsive.dart';
+import 'package:portfolio/view/main/components/tab_widget.dart';
 import 'package:portfolio/view/projects/components/title_text.dart';
 import 'components/projects_grid.dart';
 import 'package:side_sheet/side_sheet.dart';
@@ -11,6 +12,7 @@ import 'package:side_sheet/side_sheet.dart';
 class ProjectsView extends StatelessWidget {
   ProjectsView({super.key});
   final controller = Get.put(ProjectController());
+
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -35,8 +37,8 @@ class ProjectsView extends StatelessWidget {
         ),
         const SizedBox(height: 5),
         Responsive(
-          desktop: ProjectGrid(crossAxisCount: 2, projectLength: 4),
-          extraLargeScreen: ProjectGrid(crossAxisCount: 2, projectLength: 4),
+          desktop: ProjectGrid(crossAxisCount: 2, projectLength: 6),
+          extraLargeScreen: ProjectGrid(crossAxisCount: 2, projectLength: 6),
           largeMobile: ProjectGrid(
             crossAxisCount: 1,
             ratio: 1.8,
@@ -56,18 +58,23 @@ class ProjectsView extends StatelessWidget {
                 body: SafeArea(
                   child: Column(
                     children: [
+                      SizedBox(height: 10),
+
                       Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
                           SizedBox(),
-                          ShaderMask(
-                            shaderCallback: (bounds) {
-                              return LinearGradient(
-                                colors: [g1Color, g2Color],
-                              ).createShader(bounds);
-                            },
-                            child: TitleText(prefix: '', title: 'All Projects'),
-                          ),
+                          Obx(() {
+                            return CommonTabWidget(
+                              tabs: const [
+                                "Work Projects",
+                                "Personal Projects",
+                              ],
+                              selectedValue: controller.selectedIndex.value,
+                              onTap: controller.onSelected,
+                            );
+                          }),
+
                           Padding(
                             padding: const EdgeInsets.all(10),
                             child: InkWell(
@@ -79,10 +86,12 @@ class ProjectsView extends StatelessWidget {
                           ),
                         ],
                       ),
+                      SizedBox(height: 10),
+
                       Expanded(
                         child: Responsive(
                           desktop: ProjectGrid(
-                            crossAxisCount: 2,
+                            crossAxisCount: 3,
                             needScroll: true,
                           ),
                           extraLargeScreen: ProjectGrid(

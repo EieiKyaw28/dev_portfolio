@@ -4,7 +4,7 @@ const primaryColor = Colors.white;
 const secondaryColor = Color(0xFF242430);
 const darkColor = Color(0xFF191923);
 const bodyTextColor = Color(0xFF8B8B8D);
-const bgColor = Color(0xFF210F37);
+const bgColor = Color(0xFF0F061E);
 const defaultPadding = 20.0;
 
 const g1Color = Color(0xFFE5AAC3);
@@ -15,8 +15,6 @@ class ImageString {
   static const windowIcon = 'assets/svg/window.svg';
   static const androidIcon = 'assets/svg/android.svg';
   static const iosIcon = 'assets/svg/ios.svg';
-
- 
 }
 
 class ProjectImageString {

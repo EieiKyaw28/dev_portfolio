@@ -20,6 +20,7 @@ class ProjectModel {
   final String? macosLink;
   final String? windowsLink;
   final String? gitLink;
+  final bool? isPersonal;
 
   ProjectModel({
     required this.title,
@@ -34,39 +35,142 @@ class ProjectModel {
     required this.macosLink,
     required this.windowsLink,
     this.gitLink,
+    this.isPersonal = false,
   });
 
   static List<ProjectModel> projects = [
     /// my project
     ProjectModel(
-      title: "Expense Tracker",
-      description: "Developed with Isar Database and GetX",
-      appPhotos: "assets/proj_images/expense.png",
-      techUsed: ["isar", "getx"],
+      title: "Watchbay",
+      description:
+          "E-commerce mobile application developed using GetX, featuring product listings, cart management, and secure API integration for orders and payments.",
+
+      appPhotos: "assets/proj_images/cherry_oo.png",
+      techUsed: ["dio", "getx"],
+
+      androidLink:
+          'https://play.google.com/store/apps/details?id=com.seventhcomputing.cherryOoWatchBay&hl=en',
+      iosLink: 'https://apps.apple.com/us/app/watchbay/id6462392858',
+      windowsLink: null,
+      macosLink: null,
+      gitLink: null,
+    ),
+    ProjectModel(
+      title: "Wabi-Sabi HR",
+      description:
+          "HR management mobile app developed using GetX and integrated with a Python-based REST API for backend services.",
+      appPhotos: "assets/proj_images/wabiisabii.png",
+      techUsed: ["dio", "getx"],
+
+      androidLink:
+          "https://play.google.com/store/apps/details?id=com.seventhcomputing.wabisabi_hr_app&hl=en",
+      iosLink: 'https://apps.apple.com/us/app/wabi-sabi-hr/id6739242082',
+      windowsLink: null,
+      macosLink: null,
+      gitLink: null,
+    ),
+    ProjectModel(
+      title: "GHT HR",
+      description:
+          "HR management mobile app developed using GetX and integrated with a Python-based REST API for backend services.",
+      appPhotos: "assets/proj_images/ght.png",
+      techUsed: ["dio", "getx"],
+
+      androidLink:
+          'https://play.google.com/store/apps/details?id=com.seventhcomputing.ght_hr_app&hl=en',
+      iosLink: 'https://apps.apple.com/us/app/ght-hr/id6742475405',
+      windowsLink: null,
+      macosLink: null,
+      gitLink: null,
+    ),
+    ProjectModel(
+      title: "RBD Myanmar",
+      description:
+          "E-commerce mobile application developed using GetX, featuring product listings, cart management, and secure API integration for orders and payments.",
+      appPhotos: "assets/proj_images/rbd.png",
+      techUsed: ["dio", "getx"],
+
+      androidLink:
+          'https://play.google.com/store/apps/details?id=com.seventhcomputing.rainbow&hl=en',
+      iosLink: 'https://apps.apple.com/us/app/rbd-myanmar/id1582969540',
+      windowsLink: null,
+      macosLink: null,
+      gitLink: null,
+    ),
+
+    ProjectModel(
+      title: "DMS System",
+      description:
+          "Dealer Management System (DMS) mobile application developed in Java, integrated with an Odoo backend via REST APIs and offline-capable local data storage using MongoDB.",
+      appPhotos: "assets/proj_images/dms.png",
+      techUsed: ["java", "mongodb", "realm"],
 
       androidLink: null,
       iosLink: null,
       windowsLink: null,
       macosLink: null,
-      gitLink: 'https://github.com/EieiKyaw28/expense_tracker',
+      gitLink: null,
     ),
+
+    ProjectModel(
+      title: "Rental Management",
+      description:
+          "A Flutter-based rental management system featuring a clean, custom UI design. Built with Riverpod for scalable state management and Dio for robust API communication.",
+      appPhotos: "assets/proj_images/rental.png",
+      techUsed: ["dio", "riverpod", "figma"],
+      androidLink: null,
+      iosLink: null,
+      windowsLink: null,
+      macosLink: null,
+      gitLink: "https://github.com/EieiKyaw28/sky_cast",
+      isPersonal: true,
+    ),
+    ProjectModel(
+      title: "Sky Cast",
+      description:
+          "Weather forecast application with real-time data fetching, built using Riverpod for state management and Dio for API integration.",
+      appPhotos: "assets/proj_images/weather.png",
+      techUsed: ["dio", "riverpod", "figma"],
+      androidLink: null,
+      iosLink: null,
+      windowsLink: null,
+      macosLink: null,
+      gitLink: "https://github.com/EieiKyaw28/sky_cast",
+      isPersonal: true,
+    ),
+
+    ProjectModel(
+      title: "Expense Tracker",
+      description:
+          "Personal finance tracking application with offline-first local persistence using Isar Database and reactive state management powered by GetX.",
+      appPhotos: "assets/proj_images/exp.png",
+      techUsed: ["isar", "getx"],
+      androidLink: null,
+      iosLink: null,
+      windowsLink: null,
+      macosLink: null,
+      gitLink: "https://github.com/EieiKyaw28/expense_tracker",
+      isPersonal: true,
+    ),
+
     ProjectModel(
       title: "Shop Now",
-      description: "Developed with Supabase, PostgreSQL, Isar and Riverpod",
+      description:
+          "E-commerce application leveraging Supabase and PostgreSQL for backend services, integrated with Isar for local storage and Riverpod for scalable state management.",
       appPhotos: "assets/proj_images/flutter.png",
-      techUsed: ["supabase", "isar", "firebase", "riverpod"],
-
+      techUsed: ["supabase", "postgresql", "isar", "firebase", "riverpod"],
       androidLink: null,
       iosLink: null,
       windowsLink: null,
       macosLink: null,
-      gitLink: 'https://github.com/EieiKyaw28/shop_now_backend',
+      gitLink: "https://github.com/EieiKyaw28/shop_now_backend",
+      isPersonal: true,
     ),
 
     ProjectModel(
-      title: "POS(Lite)",
+      title: "POS (Lite)",
       description:
-          "Developed with Supabase, PostgreSQL, WebSockets, Isar and Riverpod",
+          "Cross-platform POS application supporting real-time transactions via WebSockets, Supabase backend services, and offline-capable local data handling with Isar.",
       appPhotos: "assets/images/poslite.png",
       techUsed: ["supabase", "postgresql", "isar", "riverpod", "mockito"],
       usersCount: 10000,
@@ -77,13 +181,14 @@ class ProjectModel {
           "https://apps.microsoft.com/detail/9n9b4768l0j2?hl=en-US&gl=MM",
       macosLink: "https://apps.apple.com/us/app/pos-lite/id1624703290",
     ),
+
     ProjectModel(
       title: "Sales Plus",
       description:
-          "Developed with Supabase, PostgreSQL, WebSockets, Isar and Riverpod",
+          "Sales management platform with real-time data synchronization using WebSockets, Supabase backend integration, and Riverpod-based architecture.",
       appPhotos: "assets/images/salesplus.png",
-      usersCount: null,
       techUsed: ["supabase", "postgresql", "isar", "riverpod", "mockito"],
+      usersCount: null,
       androidLink:
           "https://play.google.com/store/apps/details?id=com.marketplace.salesplus",
       iosLink: "https://apps.apple.com/us/app/sales-plus-bot/id6739029671",
@@ -91,24 +196,28 @@ class ProjectModel {
           "https://apps.microsoft.com/detail/9pf7cml4z1jp?hl=en-US&gl=MM",
       macosLink: "https://apps.apple.com/us/app/sales-plus-bot/id6739029671",
     ),
+
     ProjectModel(
       title: "Zawgyi Mart",
-      description: "Developed with RESTful APIs, Websockets, Isar and Riverpod",
+      description:
+          "Large-scale e-commerce platform featuring RESTful APIs, real-time updates via WebSockets, and efficient local caching with Isar Database.",
       appPhotos: "assets/images/zawgyimart.png",
-      usersCount: 10000,
       techUsed: ["isar", "riverpod", "mockito"],
+      usersCount: 10000,
       androidLink:
           "https://play.google.com/store/apps/details?id=com.zawgyimart.zacompany",
       iosLink: "https://apps.apple.com/mm/app/zawgyi-mart/id1580381266",
       windowsLink: null,
       macosLink: null,
     ),
+
     ProjectModel(
       title: "Hoco Online Shopping",
-      description: "Developed with RESTful APIs, WebSockets, Isar and Riverpod",
-      appPhotos: 'assets/proj_images/hoco.jpg',
-      usersCount: 10000,
+      description:
+          "Online shopping application integrating RESTful APIs with real-time updates and optimized state management using Riverpod.",
+      appPhotos: "assets/proj_images/hoco.jpg",
       techUsed: ["isar", "riverpod"],
+      usersCount: 10000,
       androidLink:
           "https://play.google.com/store/apps/details?id=com.phonecenter.onlineshopping",
       iosLink:
@@ -116,64 +225,73 @@ class ProjectModel {
       windowsLink: null,
       macosLink: null,
     ),
+
     ProjectModel(
       title: "Sweety Home B2B",
-      description: "Developed with RESTful APIs, Websockets, Isar and Riverpod",
+      description:
+          "B2B commerce application enabling real-time order processing through WebSockets, API-driven data flow, and offline support using Isar.",
       appPhotos: "assets/proj_images/sweety_home_b2b.png",
-      usersCount: 3000,
       techUsed: ["isar", "riverpod"],
+      usersCount: 3000,
       androidLink:
           "https://play.google.com/store/apps/details?id=com.marketplace.sweetyhomeb2b",
       iosLink: "https://apps.apple.com/us/app/sweety-home-b2b/id1664695779",
       windowsLink:
-          'https://apps.microsoft.com/detail/9pgq0bn6j084?hl=en-US&gl=US',
+          "https://apps.microsoft.com/detail/9pgq0bn6j084?hl=en-US&gl=US",
       macosLink: "https://apps.apple.com/us/app/sweety-home-b2b/id1664695779",
     ),
 
     ProjectModel(
       title: "Sweety Home Member",
-      description: "Developed with RESTful APIs and Riverpod",
-      appPhotos: 'assets/proj_images/sh_member.png',
-      usersCount: null,
+      description:
+          "Customer-focused mobile application integrating RESTful APIs with a lightweight and scalable Riverpod-based state management approach.",
+      appPhotos: "assets/proj_images/sh_member.png",
       techUsed: ["riverpod"],
+      usersCount: null,
       androidLink:
           "https://play.google.com/store/apps/details?id=com.sweetyhome.member",
-      iosLink: 'https://apps.apple.com/us/app/sweety-home-member/id6443511939',
+      iosLink: "https://apps.apple.com/us/app/sweety-home-member/id6443511939",
       windowsLink: null,
       macosLink: null,
     ),
+
     ProjectModel(
       title: "Home Mall",
-      description: "Developed with RESTful APIs, Websockets, Isar and Riverpod",
+      description:
+          "Retail shopping platform with real-time inventory updates, RESTful APIs, and local data persistence using Isar Database.",
       appPhotos: "assets/proj_images/home_mall.png",
-      usersCount: 3000,
       techUsed: ["isar", "riverpod"],
+      usersCount: 3000,
       androidLink:
           "https://play.google.com/store/apps/details?id=com.sweetyhome.homemall",
       iosLink: "https://apps.apple.com/us/app/homemall-app/id6445836654",
       windowsLink: null,
       macosLink: null,
     ),
+
     ProjectModel(
       title: "Proven Backend",
-      description: "Developed with RESTful APIs and Riverpod",
+      description:
+          "Merchant and logistics management application powered by RESTful APIs with a clean and maintainable Riverpod-based architecture.",
       appPhotos: "assets/proj_images/proven.png",
-      usersCount: null,
       techUsed: ["riverpod"],
+      usersCount: null,
       androidLink:
           "https://play.google.com/store/apps/details?id=com.deliverysoftware.epost",
       iosLink: "https://apps.apple.com/us/app/epost-merchant/id1597559513",
       windowsLink:
           "https://apps.microsoft.com/detail/9n7nntpth9xc?hl=en-US&gl=MM",
       macosLink:
-          'https://apps.microsoft.com/detail/9n7nntpth9xc?hl=en-US&gl=MM',
+          "https://apps.microsoft.com/detail/9n7nntpth9xc?hl=en-US&gl=MM",
     ),
+
     ProjectModel(
       title: "Toyo Battery",
-      description: "Developed with RESTful APIs and Riverpod",
+      description:
+          "Product and service management application integrating RESTful APIs with a scalable and modular Riverpod state management approach.",
       appPhotos: "assets/proj_images/flutter.png",
-      usersCount: null,
       techUsed: ["riverpod"],
+      usersCount: null,
       androidLink: null,
       iosLink: null,
       windowsLink: null,
@@ -183,46 +301,51 @@ class ProjectModel {
     ProjectModel(
       title: "MP Officer",
       description:
-          "Developed with Jetpack Compose with RESTful API and state management",
+          "Enterprise-grade Android application built with Jetpack Compose, integrating RESTful APIs and modern state management patterns.",
       appPhotos: "assets/proj_images/mp_officer.png",
-      usersCount: null,
       techUsed: ["jetpack"],
+      usersCount: null,
       androidLink:
           "https://play.google.com/store/apps/details?id=com.za.epost.manager",
       iosLink: null,
       windowsLink: null,
       macosLink: null,
     ),
+
     ProjectModel(
       title: "MP Agent",
       description:
-          "Developed with Jetpack Compose with RESTful API and state management",
+          "Agent-facing Android application developed with Jetpack Compose and RESTful API integration for operational workflows.",
       appPhotos: "assets/proj_images/mp_agent.png",
-      usersCount: null,
       techUsed: ["jetpack"],
+      usersCount: null,
       androidLink:
           "https://play.google.com/store/apps/details?id=com.myanmarpostagent.zacompany.mpagent",
       iosLink: null,
       windowsLink: null,
       macosLink: null,
     ),
+
     ProjectModel(
       title: "Love Car",
-      description: "Developed with RESTful APIs and Bloc",
+      description:
+          "Automotive service application utilizing RESTful APIs and Bloc architecture for predictable and maintainable state management.",
       appPhotos: "assets/images/lovecar_logo.png",
-      usersCount: null,
       techUsed: ["bloc"],
+      usersCount: null,
       androidLink: "https://play.google.com/store/apps/details?id=love.car.mm",
       iosLink: null,
       windowsLink: null,
       macosLink: null,
     ),
+
     ProjectModel(
       title: "Foodburma",
-      description: "Developed with RESTful APIs and GetX",
+      description:
+          "Food delivery application integrating RESTful APIs with GetX for efficient navigation and state management.",
       appPhotos: "assets/images/foodburma.jpg",
-      usersCount: null,
       techUsed: ["getx"],
+      usersCount: null,
       androidLink: "https://apkpure.com/foodburma/com.devseasons.sarmal",
       iosLink: null,
       windowsLink: null,
@@ -245,6 +368,8 @@ class Project {
     this.prjPlatformList,
   );
 }
+
+// Don't use
 
 class ProjectPlatformModel {
   final String link;

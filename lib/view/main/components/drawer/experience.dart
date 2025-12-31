@@ -68,8 +68,8 @@ class _ExperienceState extends State<Experience> {
                                 child: ListView.builder(
                                   scrollDirection: Axis.horizontal,
                                   shrinkWrap: true,
-                                  physics: NeverScrollableScrollPhysics(),
 
+                                  // physics: NeverScrollableScrollPhysics(),
                                   itemCount: works.length,
                                   itemBuilder: (context, index) {
                                     final work = works[index];
@@ -305,6 +305,25 @@ class WorkExperienceModel {
 
 List<WorkExperienceModel> works = [
   WorkExperienceModel(
+    name: "7th Computing Co.,Ltd.",
+    image: 'assets/images/seven_th.png',
+    role: 'Senior Mobile Developer (Flutter & Android)',
+    year: '2025 August - Present',
+    ref:
+        'Reference\nMr Phyo Min Zaw\nFounder & Managing Director\ncontact@zawminaung.net\n+959765433809',
+    exp: [
+      "❑ Lead the mobile development team, managing task planning, code reviews, and technical decisions.",
+      "❑ Developed and maintained cross-platform mobile applications using Flutter.",
+      "❑ Migrated legacy Flutter applications to the latest Flutter versions, improving performance and stability.",
+      "❑ Designed and developed Android native applications using Java, Kotlin and Jetpack Compose.",
+      "❑ Published and maintained applications on Google Play Store and Apple App Store, handling release and update processes.",
+      "❑ Integrated REST APIs and real-time features, collaborating closely with backend teams.",
+      "❑ Worked extensively with Odoo backend systems, gaining strong knowledge of Odoo APIs and business workflows.",
+      "❑ Collaborated with designers, QA, and backend developers in an Agile/Scrum environment.",
+    ],
+  ),
+
+  WorkExperienceModel(
     name: "Za Information Technology Co.,Ltd.",
     image: 'assets/images/za.png',
     role: 'Mobile Developer (Flutter & Jetpack Compose)',
@@ -312,12 +331,12 @@ List<WorkExperienceModel> works = [
     ref:
         'Reference\nMr Zaw Min Aung\nCo-founder & managing director\ncontact@zawminaung.net\n+959765433809',
     exp: [
-      "❑ Built cross-platform apps using Flutter and Kotlin (Compose)",
-      "❑ Integrated REST APIs, WebSocket for real-time features (chat, updates)",
-      "❑ Implemented CI/CD and Flutter testing (unit, widget)",
-      "❑ Designed responsive UI with Material/Cupertino widgets",
-      "❑ Integrated of Sunmi POS, Bluetooth thermal, and laser printers using standard print drivers",
-      "❑ Integrated location-based services and interactive maps in Flutter apps using Google Maps API, OSM and Geolocator",
+      "❑ Built cross-platform apps using Flutter and Kotlin (Compose).",
+      "❑ Integrated REST APIs, WebSocket for real-time features (chat, updates).",
+      "❑ Implemented CI/CD and Flutter testing (unit, widget).",
+      "❑ Designed responsive UI with Material/Cupertino widgets.",
+      "❑ Integrated of Sunmi POS, Bluetooth thermal, and laser printers using standard print drivers.",
+      "❑ Integrated location-based services and interactive maps in Flutter apps using Google Maps API, OSM and Geolocator.",
       "❑ Collaborated with designers and backend teams in Agile/Scrum workflow.",
     ],
   ),
