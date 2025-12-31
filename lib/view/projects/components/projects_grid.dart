@@ -37,18 +37,40 @@ class ProjectGrid extends StatelessWidget {
           crossAxisSpacing: 1,
           crossAxisCount: 3,
           childAspectRatio: ratio,
-          mainAxisExtent: isDesktop ? 400 : 340,
+          mainAxisExtent: isDesktop ? 380 : 340,
           mainAxisSpacing: 1,
         ),
         itemBuilder: (context, index) {
-          return AnimatedContainer(
-            duration: const Duration(milliseconds: 200),
-            margin: const EdgeInsets.symmetric(
-              vertical: defaultPadding,
-              horizontal: defaultPadding,
-            ),
-            decoration: BoxDecoration(borderRadius: BorderRadius.circular(30)),
-            child: CardItem(project: projects[index]),
+          final project = projects[index];
+
+          return MouseRegion(
+            onEnter: (_) => controller.onHover(index),
+            onExit: (_) => controller.onExit(),
+            child: Obx(() {
+              final isHovered = controller.hoveredIndex.value == index;
+
+              return AnimatedContainer(
+                duration: const Duration(milliseconds: 200),
+                transform:
+                    isHovered
+                        ? (Matrix4.identity()..scale(1.05))
+                        : Matrix4.identity(),
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(30),
+                  boxShadow:
+                      isHovered
+                          ? [
+                            BoxShadow(
+                              color: Colors.white.withOpacity(0.2),
+                              blurRadius: 20,
+                              offset: const Offset(0, 10),
+                            ),
+                          ]
+                          : [],
+                ),
+                child: CardItem(project: project),
+              );
+            }),
           );
         },
       );

@@ -273,7 +273,11 @@ class CardItem extends StatelessWidget {
           top: 0,
           left: 10,
           child: Container(
-            color: bgColor,
+            decoration: BoxDecoration(
+              color: bgColor,
+              borderRadius: BorderRadius.circular(10),
+            ),
+
             padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 4),
             child: Text(
               project.title,

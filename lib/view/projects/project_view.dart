@@ -80,6 +80,7 @@ class ProjectsView extends StatelessWidget {
                             child: InkWell(
                               onTap: () {
                                 Navigator.pop(context);
+                                controller.onSelected(0);
                               },
                               child: Icon(Icons.close, color: Colors.red),
                             ),

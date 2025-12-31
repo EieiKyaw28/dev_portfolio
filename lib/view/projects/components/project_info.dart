@@ -13,9 +13,7 @@ class ProjectStack extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return InkWell(
-      onHover: (value) {
-        controller.onHover(index, value);
-      },
+      onHover: (value) {},
       onTap: () {
         ImageViewer(context, projectList[index].image);
       },

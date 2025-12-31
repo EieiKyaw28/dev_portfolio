@@ -113,6 +113,20 @@ class ProjectModel {
     ),
 
     ProjectModel(
+      title: "Portfolio",
+      description:
+          "A Flutter-based portfolio designed to present projects and technical expertise with a structured and maintainable architecture. Uses GetX for state management and streamlined navigation.",
+      appPhotos: "assets/images/ei.jpg",
+      techUsed: ["getx", "figma"],
+      androidLink: null,
+      iosLink: null,
+      windowsLink: null,
+      macosLink: null,
+      gitLink: "https://github.com/EieiKyaw28/expense_tracker",
+      isPersonal: true,
+    ),
+
+    ProjectModel(
       title: "Rental Management",
       description:
           "A Flutter-based rental management system featuring a clean, custom UI design. Built with Riverpod for scalable state management and Dio for robust API communication.",

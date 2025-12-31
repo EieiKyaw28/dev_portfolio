@@ -3,23 +3,24 @@ import 'package:portfolio/model/project_model.dart';
 
 class ProjectController extends GetxController {
   RxInt selectedIndex = 0.obs;
-  RxList<bool> hovers =
-      [false, false, false, false, false, false, false, false, false].obs;
+  RxInt hoveredIndex = (-1).obs;
 
-  onHover(int index, bool value) {
-    hovers[index] = value;
+  void onHover(int index) {
+    hoveredIndex.value = index;
   }
 
-  onSelected(int index) {
+  void onExit() {
+    hoveredIndex.value = -1;
+  }
+
+  void onSelected(int index) {
     selectedIndex.value = index;
   }
 
   List<ProjectModel> get filteredProjects {
     if (selectedIndex.value == 0) {
-      // Work Projects
       return ProjectModel.projects.where((p) => p.isPersonal != true).toList();
     } else {
-      // Personal Projects
       return ProjectModel.projects.where((p) => p.isPersonal == true).toList();
     }
   }
