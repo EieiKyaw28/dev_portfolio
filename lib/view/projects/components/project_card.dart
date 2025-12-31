@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:portfolio/model/project_model.dart';
 import 'package:portfolio/res/constants.dart';
 import 'package:portfolio/view%20model/responsive.dart';
@@ -94,7 +95,7 @@ class CardItem extends StatelessWidget {
                                               padding: const EdgeInsets.all(5),
                                               height: 26,
                                               child: Tooltip(
-                                                message: e,
+                                                message: e.capitalize,
                                                 child: ClipRRect(
                                                   borderRadius:
                                                       BorderRadius.circular(2),
