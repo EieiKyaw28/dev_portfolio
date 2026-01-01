@@ -332,7 +332,7 @@ class _Skill2State extends State<Skill2> with SingleTickerProviderStateMixin {
                             child: _skillComponent(
                               stateManagement,
                               Colors.pink.shade400,
-                              "State Management",
+                              isDesktop ? "State Management" : "State",
                             ),
                           ),
                         ),
