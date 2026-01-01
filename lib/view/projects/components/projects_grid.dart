@@ -2,8 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:portfolio/view%20model/responsive.dart';
 import 'package:portfolio/view/projects/components/project_card.dart';
-import '../../../model/project_model.dart';
-import '../../../res/constants.dart';
+
 import '../../../view model/getx_controllers/projects_controller.dart';
 
 class ProjectGrid extends StatelessWidget {
@@ -37,7 +36,7 @@ class ProjectGrid extends StatelessWidget {
           crossAxisSpacing: 1,
           crossAxisCount: crossAxisCount,
           childAspectRatio: ratio,
-          mainAxisExtent: isDesktop ? 380 : 340,
+          mainAxisExtent: isDesktop ? 380 : 360,
           mainAxisSpacing: 1,
         ),
         itemBuilder: (context, index) {

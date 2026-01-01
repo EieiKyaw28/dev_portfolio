@@ -15,6 +15,7 @@ class ProjectsView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final isDesktop = Responsive.isDesktop(context);
     return Column(
       crossAxisAlignment: CrossAxisAlignment.center,
       children: [
@@ -66,10 +67,14 @@ class ProjectsView extends StatelessWidget {
                           SizedBox(),
                           Obx(() {
                             return CommonTabWidget(
-                              tabs: const [
-                                "Work Projects",
-                                "Personal Projects",
-                              ],
+                              width: isDesktop ? 410 : 170,
+                              tabs:
+                                  isDesktop
+                                      ? const [
+                                        "Work Projects",
+                                        "Personal Projects",
+                                      ]
+                                      : const ["Work", "Personal"],
                               selectedValue: controller.selectedIndex.value,
                               onTap: controller.onSelected,
                             );

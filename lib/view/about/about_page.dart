@@ -6,7 +6,6 @@ import 'package:portfolio/res/constants.dart';
 import 'package:portfolio/view%20model/responsive.dart';
 import 'package:portfolio/view/projects/components/title_text.dart';
 import 'package:url_launcher/url_launcher.dart';
-import '../components/drawer/drawer_image.dart';
 
 class AboutPage extends StatefulWidget {
   const AboutPage({super.key});
@@ -198,7 +197,7 @@ class _AboutPageState extends State<AboutPage> with TickerProviderStateMixin {
                                             SizedBox(height: 10),
 
                                             Text(
-                                              'I’m a passionate Mobile Developer with over 2 years of experience in building high-quality applications across native Android (Kotlin, Jetpack Compose) and cross-platform frameworks (Flutter, Dart).',
+                                              'I’m a passionate Mobile Developer with over 3 years of experience in building high-quality applications across native Android (Java, Kotlin, Jetpack Compose) and cross-platform frameworks (Flutter, Dart).',
                                               style: TextStyle(
                                                 color: Colors.white,
                                               ),

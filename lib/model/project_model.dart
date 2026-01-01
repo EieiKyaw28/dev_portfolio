@@ -1,5 +1,3 @@
-import 'package:portfolio/res/constants.dart';
-
 class LinkModel {
   final String title;
   final String url;
@@ -39,7 +37,7 @@ class ProjectModel {
   });
 
   static List<ProjectModel> projects = [
-    /// my project
+    /// work project
     ProjectModel(
       title: "Watchbay",
       description:

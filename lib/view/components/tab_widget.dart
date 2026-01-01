@@ -1,26 +1,29 @@
 import 'package:flutter/material.dart';
 import 'package:portfolio/res/constants.dart' as MyTheme;
+import 'package:portfolio/view%20model/responsive.dart';
 
 class CommonTabWidget extends StatelessWidget {
   final Function(int) onTap;
   final int selectedValue;
   final List<String> tabs;
+  final double? width;
 
   const CommonTabWidget({
     super.key,
     required this.onTap,
     required this.selectedValue,
     required this.tabs,
+    this.width = 410,
   });
 
   @override
   Widget build(BuildContext context) {
     return Container(
       height: 50,
-      width: 410,
+      width: width,
       decoration: BoxDecoration(
         border: Border.all(color: Colors.white, width: 1),
-        color: MyTheme.secondaryColor,
+        color: MyTheme.bgColor,
         borderRadius: BorderRadius.circular(6),
         boxShadow: const [
           BoxShadow(
@@ -69,12 +72,13 @@ class _ToggleComponent extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final isDesktop = Responsive.isDesktop(context);
     return InkWell(
       onTap: () {
         onTap();
       },
       child: Container(
-        width: 200,
+        width: isDesktop ? 200 : 80,
         height: 50,
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(5),
