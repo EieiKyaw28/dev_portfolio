@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../../../../res/constants.dart';
+import '../../../res/constants.dart';
 import 'header_info.dart';
 
 class PersonalInfo extends StatelessWidget {

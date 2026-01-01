@@ -4,7 +4,6 @@ import 'package:lottie/lottie.dart';
 import 'package:portfolio/view/projects/components/title_text.dart';
 import '../../../res/constants.dart';
 import '../../../view model/responsive.dart';
-import 'animated_texts_componenets.dart';
 
 import 'download_button.dart';
 import 'headline_text.dart';

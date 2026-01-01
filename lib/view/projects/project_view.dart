@@ -4,7 +4,7 @@ import 'package:get/get.dart';
 import 'package:portfolio/res/constants.dart';
 import 'package:portfolio/view%20model/getx_controllers/projects_controller.dart';
 import 'package:portfolio/view%20model/responsive.dart';
-import 'package:portfolio/view/main/components/tab_widget.dart';
+import 'package:portfolio/view/components/tab_widget.dart';
 import 'package:portfolio/view/projects/components/title_text.dart';
 import 'components/projects_grid.dart';
 import 'package:side_sheet/side_sheet.dart';
@@ -37,8 +37,8 @@ class ProjectsView extends StatelessWidget {
         ),
         const SizedBox(height: 5),
         Responsive(
-          desktop: ProjectGrid(crossAxisCount: 2, projectLength: 6),
-          extraLargeScreen: ProjectGrid(crossAxisCount: 2, projectLength: 6),
+          desktop: ProjectGrid(crossAxisCount: 3, projectLength: 6),
+          extraLargeScreen: ProjectGrid(crossAxisCount: 3, projectLength: 6),
           largeMobile: ProjectGrid(
             crossAxisCount: 1,
             ratio: 1.8,
@@ -96,7 +96,7 @@ class ProjectsView extends StatelessWidget {
                             needScroll: true,
                           ),
                           extraLargeScreen: ProjectGrid(
-                            crossAxisCount: 2,
+                            crossAxisCount: 3,
                             needScroll: true,
                           ),
                           largeMobile: ProjectGrid(
@@ -111,7 +111,7 @@ class ProjectsView extends StatelessWidget {
                           ),
                           tablet: ProjectGrid(
                             ratio: 1.4,
-                            crossAxisCount: 2,
+                            crossAxisCount: 1,
                             needScroll: true,
                           ),
                         ),

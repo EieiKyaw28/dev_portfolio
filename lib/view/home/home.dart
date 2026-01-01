@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:portfolio/view/intro/introduction.dart';
-import 'package:portfolio/view/main/components/drawer/about_page.dart';
-import 'package:portfolio/view/main/components/drawer/experience.dart';
-import 'package:portfolio/view/main/components/drawer/skill_2.dart';
+import 'package:portfolio/view/about/about_page.dart';
+import 'package:portfolio/view/experience/experience.dart';
+import 'package:portfolio/view/skill/skill.dart';
 import 'package:portfolio/view/main/main_view.dart';
 import 'package:portfolio/view/projects/project_view.dart';
 

@@ -99,6 +99,20 @@ class ProjectModel {
     ),
 
     ProjectModel(
+      title: "POS System",
+      description:
+          "A point-of-sale (POS) mobile application, featuring seamless payment gateway integration and real-time synchronization with an Odoo backend via REST APIs. Supports offline-capable local data storage for reliable transaction handling.",
+      appPhotos: "assets/proj_images/pos_icon.png",
+      techUsed: ["java", "kotlin", "mongodb", "realm"],
+
+      androidLink: null,
+      iosLink: null,
+      windowsLink: null,
+      macosLink: null,
+      gitLink: null,
+    ),
+
+    ProjectModel(
       title: "DMS System",
       description:
           "Dealer Management System (DMS) mobile application developed in Java, integrated with an Odoo backend via REST APIs and offline-capable local data storage using MongoDB.",
@@ -110,75 +124,6 @@ class ProjectModel {
       windowsLink: null,
       macosLink: null,
       gitLink: null,
-    ),
-
-    ProjectModel(
-      title: "Portfolio",
-      description:
-          "A Flutter-based portfolio designed to present projects and technical expertise with a structured and maintainable architecture. Uses GetX for state management and streamlined navigation.",
-      appPhotos: "assets/images/ei.jpg",
-      techUsed: ["getx", "figma"],
-      androidLink: null,
-      iosLink: null,
-      windowsLink: null,
-      macosLink: null,
-      gitLink: "https://github.com/EieiKyaw28/expense_tracker",
-      isPersonal: true,
-    ),
-
-    ProjectModel(
-      title: "Rental Management",
-      description:
-          "A Flutter-based rental management system featuring a clean, custom UI design. Built with Riverpod for scalable state management and Dio for robust API communication.",
-      appPhotos: "assets/proj_images/rental.png",
-      techUsed: ["dio", "riverpod", "figma"],
-      androidLink: null,
-      iosLink: null,
-      windowsLink: null,
-      macosLink: null,
-      gitLink: "https://github.com/EieiKyaw28/sky_cast",
-      isPersonal: true,
-    ),
-    ProjectModel(
-      title: "Sky Cast",
-      description:
-          "Weather forecast application with real-time data fetching, built using Riverpod for state management and Dio for API integration.",
-      appPhotos: "assets/proj_images/weather.png",
-      techUsed: ["dio", "riverpod", "figma"],
-      androidLink: null,
-      iosLink: null,
-      windowsLink: null,
-      macosLink: null,
-      gitLink: "https://github.com/EieiKyaw28/sky_cast",
-      isPersonal: true,
-    ),
-
-    ProjectModel(
-      title: "Expense Tracker",
-      description:
-          "Personal finance tracking application with offline-first local persistence using Isar Database and reactive state management powered by GetX.",
-      appPhotos: "assets/proj_images/exp.png",
-      techUsed: ["isar", "getx"],
-      androidLink: null,
-      iosLink: null,
-      windowsLink: null,
-      macosLink: null,
-      gitLink: "https://github.com/EieiKyaw28/expense_tracker",
-      isPersonal: true,
-    ),
-
-    ProjectModel(
-      title: "Shop Now",
-      description:
-          "E-commerce application leveraging Supabase and PostgreSQL for backend services, integrated with Isar for local storage and Riverpod for scalable state management.",
-      appPhotos: "assets/proj_images/flutter.png",
-      techUsed: ["supabase", "postgresql", "isar", "firebase", "riverpod"],
-      androidLink: null,
-      iosLink: null,
-      windowsLink: null,
-      macosLink: null,
-      gitLink: "https://github.com/EieiKyaw28/shop_now_backend",
-      isPersonal: true,
     ),
 
     ProjectModel(
@@ -365,152 +310,74 @@ class ProjectModel {
       windowsLink: null,
       macosLink: null,
     ),
+
+    // Personal Projects
+    ProjectModel(
+      title: "Portfolio",
+      description:
+          "A Flutter-based portfolio designed to present projects and technical expertise with a structured and maintainable architecture. Uses GetX for state management and streamlined navigation.",
+      appPhotos: "assets/images/ei.jpg",
+      techUsed: ["getx", "figma"],
+      androidLink: null,
+      iosLink: null,
+      windowsLink: null,
+      macosLink: null,
+      gitLink: "https://github.com/EieiKyaw28/expense_tracker",
+      isPersonal: true,
+    ),
+    ProjectModel(
+      title: "Rental Management",
+      description:
+          "A Flutter-based rental management system featuring a clean, custom UI design. Built with Riverpod for scalable state management and Dio for robust API communication.",
+      appPhotos: "assets/proj_images/rental.png",
+      techUsed: ["dio", "riverpod", "figma"],
+      androidLink: null,
+      iosLink: null,
+      windowsLink: null,
+      macosLink: null,
+      gitLink: "https://github.com/EieiKyaw28/sky_cast",
+      isPersonal: true,
+    ),
+    ProjectModel(
+      title: "Sky Cast",
+      description:
+          "Weather forecast application with real-time data fetching, built using Riverpod for state management and Dio for API integration.",
+      appPhotos: "assets/proj_images/weather.png",
+      techUsed: ["dio", "riverpod", "figma"],
+      androidLink: null,
+      iosLink: null,
+      windowsLink: null,
+      macosLink: null,
+      gitLink: "https://github.com/EieiKyaw28/sky_cast",
+      isPersonal: true,
+    ),
+
+    ProjectModel(
+      title: "Expense Tracker",
+      description:
+          "Personal finance tracking application with offline-first local persistence using Isar Database and reactive state management powered by GetX.",
+      appPhotos: "assets/proj_images/exp.png",
+      techUsed: ["isar", "getx"],
+      androidLink: null,
+      iosLink: null,
+      windowsLink: null,
+      macosLink: null,
+      gitLink: "https://github.com/EieiKyaw28/expense_tracker",
+      isPersonal: true,
+    ),
+
+    ProjectModel(
+      title: "Shop Now",
+      description:
+          "E-commerce application leveraging Supabase and PostgreSQL for backend services, integrated with Isar for local storage and Riverpod for scalable state management.",
+      appPhotos: "assets/proj_images/shopping.png",
+      techUsed: ["supabase", "postgresql", "isar", "firebase", "riverpod"],
+      androidLink: null,
+      iosLink: null,
+      windowsLink: null,
+      macosLink: null,
+      gitLink: "https://github.com/EieiKyaw28/shop_now_backend",
+      isPersonal: true,
+    ),
   ];
 }
-
-class Project {
-  final String name;
-  final String description;
-  final String image;
-  final String link;
-  final List<ProjectPlatformModel> prjPlatformList;
-  Project(
-    this.name,
-    this.description,
-    this.image,
-    this.link,
-    this.prjPlatformList,
-  );
-}
-
-// Don't use
-
-class ProjectPlatformModel {
-  final String link;
-  final String icon;
-  ProjectPlatformModel(this.icon, this.link);
-}
-
-List<Project> projectList = [
-  Project(
-    'Sweety Home B2B',
-    'The Sweety Home App is a cross-platform solution for managing furniture and home goods operations. It handles orders, stock across warehouses and showrooms, delivery logistics, promotions, warranties, payments, and customer service — all fully integrated with SAP for real-time syncing and seamless business flow.',
-    ProjectImageString.shB2b,
-    'https://github.com/Hamad-Anwar/Neumorphic-Analog-Clockify',
-    [
-      ProjectPlatformModel(ImageString.androidIcon, ''),
-      ProjectPlatformModel(ImageString.iosIcon, ''),
-
-      ProjectPlatformModel(ImageString.macIcon, ''),
-
-      ProjectPlatformModel(ImageString.windowIcon, ''),
-    ],
-  ),
-  Project(
-    'Home Mall',
-    'Home Mall is Sweety Home’s official e-commerce app for Android and web, offering real-time stock, promotions, warranty registration, and live chat. Fully integrated with the SAP system, it ensures secure, seamless online shopping connected to backend operations.',
-    ProjectImageString.homeMall,
-    'https://github.com/Hamad-Anwar/',
-    [
-      ProjectPlatformModel(ImageString.androidIcon, ''),
-      ProjectPlatformModel(ImageString.iosIcon, ''),
-
-      ProjectPlatformModel(ImageString.macIcon, ''),
-
-      ProjectPlatformModel(ImageString.windowIcon, ''),
-    ],
-  ),
-  Project(
-    'Sweety Home Member',
-    'The Sweety Home Member App is a Flutter-based mobile app for loyal showroom customers. It offers exclusive promotions, membership benefits, and discounts. Integrated with a backend system (Firebase/APIs), it manages user data, purchase history, and push notifications, and includes NFC card reading for fast, contactless member identification.',
-    ProjectImageString.shMember,
-    'https://github.com/Hamad-Anwar/Neumorphic-Music_Player-Flutter',
-    [
-      ProjectPlatformModel(ImageString.androidIcon, ''),
-      ProjectPlatformModel(ImageString.iosIcon, ''),
-
-      ProjectPlatformModel(ImageString.macIcon, ''),
-
-      ProjectPlatformModel(ImageString.windowIcon, ''),
-    ],
-  ),
-
-  Project(
-    'Hoco Online  Shopping',
-    'Hoco Online Shopping is an e-commerce platform specializing in mobile phones and electronic devices. The app provides a seamless shopping experience for customers to browse, order, and track their purchases. Built using RESTful APIs, it ensures fast and reliable integration with the backend, allowing real-time updates on product availability, orders, and payments.',
-    ProjectImageString.hoco,
-    'https://github.com/Hamad-Anwar/Food-Recipe-App-Flutter',
-    [
-      ProjectPlatformModel(ImageString.androidIcon, ''),
-      ProjectPlatformModel(ImageString.iosIcon, ''),
-
-      ProjectPlatformModel(ImageString.macIcon, ''),
-
-      ProjectPlatformModel(ImageString.windowIcon, ''),
-    ],
-  ),
-
-  Project(
-    'Proven International',
-    'The Proven International App is a comprehensive enterprise tool built with Flutter and Laravel. It manages inventory, warehouse logistics, order and payment processing, delivery tracking, and employee KPIs. The app ensures secure, real-time operations and complies with internal ISO standards for quality and information security.',
-    ProjectImageString.proven,
-    'https://github.com/Hamad-Anwar/Coffe-Shop-Beautifull-UI',
-    [
-      ProjectPlatformModel(ImageString.androidIcon, ''),
-      ProjectPlatformModel(ImageString.iosIcon, ''),
-
-      ProjectPlatformModel(ImageString.macIcon, ''),
-
-      ProjectPlatformModel(ImageString.windowIcon, ''),
-    ],
-  ),
-  Project(
-    'Proven Distribution',
-    'The Proven Distribution App is a cross-platform Flutter app (Android, iOS, Windows, macOS) that unifies order management, stock control, warehouse operations, delivery tracking, and finance. It syncs real-time data with the central ERP, enabling smooth workflows for sales reps, warehouse staff, and delivery drivers, with live dashboards for management visibility.',
-    ProjectImageString.shB2b,
-    'https://github.com/Hamad-Anwar/Car-Controller-Getx-Flutter',
-    [],
-  ),
-  Project(
-    'POS Lite',
-    'POS Lite is a cross-platform point-of-sale (POS) system developed using the Flutter codebase. It supports both real-time and offline-first operations, enabling seamless business functionality regardless of internet connectivity. The system uses Supabase and PostgreSQL for backend services and Isar for efficient local storage and synchronization. Designed for SMEs, wholesalers, and online retailers, POS Lite provides robust features such as sales processing, order management, inventory tracking, and warehouse control.',
-    ProjectImageString.pos,
-    'https://github.com/Hamad-Anwar/Messenger-App-Backend-Firebase',
-    [
-      ProjectPlatformModel(ImageString.androidIcon, ''),
-      ProjectPlatformModel(ImageString.iosIcon, ''),
-
-      ProjectPlatformModel(ImageString.macIcon, ''),
-
-      ProjectPlatformModel(ImageString.windowIcon, ''),
-    ],
-  ),
-  Project(
-    'Sale Plus',
-    'Sales Plus is a Flutter-based mobile app tailored for F&B businesses, offering a unified system for managing orders, stock, warehouse, deliveries, table bookings, finances, and reports. It uses Isar for fast local storage, Supabase for backend services and authentication, and PostgreSQL for cloud data and analytics, enabling real-time updates and efficient business operations.',
-    ProjectImageString.salesPlus,
-    'https://github.com/Hamad-Anwar/Doctor-Appointment-Application-UI',
-    [
-      ProjectPlatformModel(ImageString.androidIcon, ''),
-      ProjectPlatformModel(ImageString.iosIcon, ''),
-
-      ProjectPlatformModel(ImageString.macIcon, ''),
-
-      ProjectPlatformModel(ImageString.windowIcon, ''),
-    ],
-  ),
-  Project(
-    'Sale Plus',
-    'Sales Plus is a Flutter-based mobile app tailored for F&B businesses, offering a unified system for managing orders, stock, warehouse, deliveries, table bookings, finances, and reports. It uses Isar for fast local storage, Supabase for backend services and authentication, and PostgreSQL for cloud data and analytics, enabling real-time updates and efficient business operations.',
-    ProjectImageString.salesPlus,
-    'https://github.com/Hamad-Anwar/Doctor-Appointment-Application-UI',
-    [
-      ProjectPlatformModel(ImageString.androidIcon, ''),
-      ProjectPlatformModel(ImageString.iosIcon, ''),
-
-      ProjectPlatformModel(ImageString.macIcon, ''),
-
-      ProjectPlatformModel(ImageString.windowIcon, ''),
-    ],
-  ),
-];

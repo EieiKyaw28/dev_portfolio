@@ -3,7 +3,7 @@ import 'package:portfolio/res/constants.dart';
 import 'package:portfolio/view%20model/responsive.dart';
 import 'package:portfolio/view/projects/components/title_text.dart';
 
-import 'components/navigation_button_list.dart';
+import '../components/navigation_button_list.dart';
 
 class MainView extends StatefulWidget {
   const MainView({super.key, required this.pages});

@@ -6,7 +6,7 @@ import 'package:portfolio/res/constants.dart';
 import 'package:portfolio/view%20model/responsive.dart';
 import 'package:portfolio/view/projects/components/title_text.dart';
 import 'package:url_launcher/url_launcher.dart';
-import 'drawer_image.dart';
+import '../components/drawer/drawer_image.dart';
 
 class AboutPage extends StatefulWidget {
   const AboutPage({super.key});

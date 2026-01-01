@@ -35,7 +35,7 @@ class ProjectGrid extends StatelessWidget {
         itemCount: projectLength ?? projects.length,
         gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
           crossAxisSpacing: 1,
-          crossAxisCount: 3,
+          crossAxisCount: crossAxisCount,
           childAspectRatio: ratio,
           mainAxisExtent: isDesktop ? 380 : 340,
           mainAxisSpacing: 1,
