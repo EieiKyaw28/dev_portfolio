@@ -309,8 +309,7 @@ List<WorkExperienceModel> works = [
     image: 'assets/images/seven_th.png',
     role: 'Senior Mobile Developer (Flutter & Android)',
     year: '2025 August - Present',
-    ref:
-        'Reference\nMr Phyo Min Zaw\nFounder & Managing Director\ncontact@zawminaung.net\n+959765433809',
+    ref: '',
     exp: [
       "❑ Lead the mobile development team, managing task planning, code reviews, and technical decisions.",
       "❑ Developed and maintained cross-platform mobile applications using Flutter.",
