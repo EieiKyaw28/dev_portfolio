@@ -320,7 +320,7 @@ class ProjectModel {
       iosLink: null,
       windowsLink: null,
       macosLink: null,
-      gitLink: "https://github.com/EieiKyaw28/expense_tracker",
+      gitLink: "https://github.com/EieiKyaw28/dev_portfolio",
       isPersonal: true,
     ),
     ProjectModel(
